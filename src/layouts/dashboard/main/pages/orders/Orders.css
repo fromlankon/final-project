@@ -1,0 +1,269 @@
+.ordersTable{
+    padding-top: 50px;
+}
+
+.deliveredClass{
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-family: Poppins-Regular;
+    color: #61967D;
+    background-color: #D1FAE5;
+}
+
+.pendingClass{
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-family: Poppins-Regular;
+    color: #D49104;
+    background-color: #FEF9C3;
+}
+
+.proccesingClass{
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-family: Poppins-Regular;
+    color: #6596F7;
+    background-color: #DBEAFE;
+}
+
+.cancelClass{
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-family: Poppins-Regular;
+    color: #F04468;
+    background-color: #FEE2E2;
+}
+
+.ant-table-cell{
+    font-family: Poppins-Regular;
+    letter-spacing: .3px;
+}
+
+.ordersTableInfo{
+    width: 30px;
+    height: 30px;
+    background-color: #1677ff;
+    color: white;
+    border-radius: 7px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: .3s;
+}
+
+.ordersTableInfo:hover{
+    background-color: #388afd;
+}
+
+.ordersInfoModalOverlay{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.ordersInfoModalOverlay.toggle{
+    display: flex;
+}
+
+.ordersInfoModal{
+    width: 1000px;
+    background-color: white;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 80px 30px;
+    font-family: Poppins-Regular;
+}
+
+.ordersInfoModal .lni-close{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-weight: 900;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.orderInfoTableMain{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.orderInfoTableMain p{
+    color:  #656668;
+}
+
+.orderInfoTableMain p span{
+    font-family: Poppins-Medium;
+    letter-spacing: .3px;
+    color: rgb(36, 36, 36);
+}
+
+.ordersInfoTable{
+    width: 100%;
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.ordersInfoTableHeader{
+    width: 100%;
+    height: 40px;
+    background-color: #F3F4F6;
+    display: flex;
+    align-items: center;
+}
+
+.ordersTableHeaderTitle{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid rgb(230, 230, 230);
+    color:  #656668;
+    letter-spacing: .5px;
+    font-size: 13px;
+    font-family: Poppins-Medium;
+    padding-left: 10px;
+}
+
+.ordersTableHeaderQuantity{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid rgb(230, 230, 230);
+    color:  #656668;
+    letter-spacing: .5px;
+    font-size: 13px;
+    font-family: Poppins-Medium;
+}
+
+.ordersTableHeaderPrice{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid rgb(230, 230, 230);
+    color:  #656668;
+    letter-spacing: .5px;
+    font-size: 13px;
+    font-family: Poppins-Medium;
+}
+
+.ordersTableHeaderAmount{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:  #656668;
+    letter-spacing: .5px;
+    font-size: 13px;
+    font-family: Poppins-Medium;
+}
+
+.ordersInfoTableBody{
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgb(230, 230, 230);
+}
+
+.ordersTableBodyTitle{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid rgb(230, 230, 230);
+    color: #282828;
+    padding-left: 10px;
+}
+
+.ordersTableBodyQuantity{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid rgb(230, 230, 230);
+    font-family: Poppins-SemiBold;
+    color: #4B5568;
+}
+
+.ordersTableBodyPrice{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid rgb(230, 230, 230);
+    font-family: Poppins-SemiBold;
+    color: #4B5568;
+}
+
+.ordersTableBodyAmount{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Poppins-SemiBold;
+    color: rgb(255, 41, 41);
+}
+
+.ordersInfoModalFooter{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(245,245,245);
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 8px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.ordersInfoModalFooter div{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ordersText1{
+    font-family: Poppins-SemiBold;
+    color: #4B5568;
+    font-size: 15px;
+    letter-spacing: .5px;
+}
+
+.ordersText2{
+    font-family: Poppins-SemiBold;
+    color: #6B7280;
+    font-size: 14px;
+}
+
+.ordersText3{
+    font-family: Poppins-SemiBold;
+    color: rgb(255, 41, 41);
+    font-size: 14px;
+}

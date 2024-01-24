@@ -1,0 +1,104 @@
+.adminHeader{
+    color: white;
+    height: 100%;
+    display: flex;
+    align-items: center !important;
+    justify-content: end;
+}
+
+.adminUserImage{
+    width: 32px;
+}
+
+.headerSettings{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.headerSettingsBlock{
+    background-color: white;
+    width: 200px;
+    position: absolute;
+    top: 49px;
+    border-radius: 5px;
+    right: -8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: none;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.headerSettingsBlock.visible{
+    display: flex;
+}
+
+.blockTriangle{
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    background-color: white;
+    position: absolute;
+    right: 17px;
+    top: -7px;
+}
+
+.headerSettingsBlock p{
+    line-height: 0;
+    color: black;
+}
+
+.dashboardSettings, .profileSettings, .logOut{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+}
+
+.dashboardSettings:hover{
+    background-color: rgb(232, 232, 232);
+}
+
+.profileSettings:hover{
+    background-color: rgb(232, 232, 232);
+}
+
+.logOut:hover{
+    background-color: rgb(232, 232, 232);
+}
+
+.dashboardSettings:hover .blockTriangle{
+    background-color: rgb(232, 232, 232);
+}
+
+.dashboardSettings img{
+    width: 14px;
+}
+
+.profileSettings img{
+    width: 14px;
+}
+
+.logOut{
+    border-bottom: 1px solid rgb(205, 205, 205);
+    
+}
+
+.logOut img{
+    width: 14px;
+}
+
+.userEmail{
+    font-family: Inter-Regular;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    cursor: default;
+}
+
+.userEmail img{
+    width: 14px;
+}

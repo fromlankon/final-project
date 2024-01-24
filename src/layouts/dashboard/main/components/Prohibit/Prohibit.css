@@ -1,0 +1,26 @@
+.prohibit{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prohibit div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.prohibit img{
+    width: 300px;
+}
+
+.prohibit p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+    letter-spacing: 2px;
+    color: rgb(54, 54, 54);
+}

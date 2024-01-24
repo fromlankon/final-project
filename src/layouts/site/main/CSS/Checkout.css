@@ -1,0 +1,685 @@
+.checkout {
+    width: 100%;
+    margin: 50px 0 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkoutContainer {
+    max-width: 1450px;
+    width: 100%;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.checkoutLocation {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.checkoutMain {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.checkoutText1 {
+    font-family: Inter-Regular;
+    color: rgb(132 132 132);
+    font-size: 15px;
+    letter-spacing: .5px;
+}
+
+.checkoutText1:hover {
+    text-decoration: underline;
+}
+
+.checkoutText2 {
+    font-family: Inter-Regular;
+    font-size: 15px;
+    letter-spacing: .5px;
+}
+
+.checkoutLogin {
+    width: 100%;
+    background-color: #EFEFEF;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.checkoutLoginSettings {
+    width: 100%;
+    background-color: #EFEFEF;
+    padding: 0 24px;
+    transform-origin: top;
+    transform: scaleY(0);
+    height: 0;
+    transition: .3s;
+    margin-top: 2px;
+}
+
+.checkoutLoginSettings.scale {
+    transform: scaleY(100%);
+    height: auto;
+    padding: 34px 24px;
+}
+
+.checkoutLoginSettingsForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 49%;
+}
+
+.checkoutLoginSettingsFormTop {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.checkoutLoginSettingsFormTop div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 49%;
+}
+
+.checkoutLoginSettings form {
+    padding-top: 20px;
+}
+
+.checkoutLoginSettingsFormTop input {
+    border: none;
+    outline: none;
+    height: 50px;
+    padding-left: 20px;
+    font-size: 15px;
+    font-family: Inter-Regular;
+}
+
+.checkoutLoginSettingsFormTop label {
+    font-family: Inter-Regular;
+    font-size: 15px;
+    letter-spacing: .5px;
+    color: black;
+}
+
+.checkoutLoginSettingsFormTop label span {
+    color: red;
+}
+
+.checkoutText3 {
+    font-family: Inter-Regular;
+    font-size: 15px;
+    letter-spacing: .5px;
+    cursor: default;
+}
+
+.checkoutLogin span, .checkoutCoupon span {
+    font-size: 15px;
+    font-family: Inter-SemiBold;
+    letter-spacing: .5px;
+    text-decoration: underline;
+    cursor: pointer;
+    user-select: none;
+    display: block;
+}
+
+.checkoutLoginSettingsFormMiddle {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding-top: 20px;
+    margin-bottom: 15px;
+}
+
+.checkoutLoginSettingsFormMiddle button {
+    padding: 0 65px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    font-family: Inter-Bold;
+    letter-spacing: .7px;
+    border: none;
+    font-size: 14px;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.checkoutLoginSettingsFormMiddle button:hover {
+    background-color: rgb(209 2 2);
+}
+
+.checkoutLoginSettingsFormMiddle div {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.checkoutLoginSettingsFormMiddle label {
+    font-family: Inter-Bold;
+    font-size: 12px;
+    letter-spacing: .3px;
+    color: black;
+    cursor: pointer;
+}
+
+.checkoutLoginSettingsFormMiddle input {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkoutLoginSettingsFormBottom {
+    font-family: Inter-Regular;
+    font-size: 15px;
+    letter-spacing: .5px;
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+.checkoutCoupon {
+    width: 100%;
+    background-color: #EFEFEF;
+    padding: 16px 24px;
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.checkoutCouponSettings {
+    width: 100%;
+    background-color: #EFEFEF;
+    padding: 0 24px;
+    transform-origin: top;
+    transform: scaleY(0);
+    height: 0;
+    transition: .3s;
+    margin-top: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.checkoutCouponSettings.scale {
+    transform: scaleY(100%);
+    height: auto;
+    padding: 34px 24px;
+}
+
+.checkoutCouponSettings div {
+    display: flex;
+    gap: 10px;
+}
+
+.checkoutCouponSettings input {
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 50px;
+    padding-left: 20px;
+    font-size: 15px;
+    font-family: Inter-Regular;
+}
+
+.checkoutCouponSettings button {
+    width: 240px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    font-family: Inter-Bold;
+    letter-spacing: .7px;
+    border: none;
+    font-size: 14px;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.checkoutCouponSettings button:hover {
+    background-color: rgb(209 2 2);
+}
+
+.checkoutBottom {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 40px;
+}
+
+.checkoutBottomLeft {
+    width: 68%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.checkoutBottomLeft input {
+    height: 50px;
+    outline: none;
+    border: 1px solid rgb(235 235 235);
+    padding-left: 20px;
+    font-size: 15px;
+    font-family: Inter-Regular;
+}
+
+.checkoutBottomLeft input::placeholder {
+    color: gray;
+    font-family: Inter-Regular;
+}
+
+.checkoutBottomLeft label {
+    font-size: 15px;
+    font-family: Inter-Regular;
+    letter-spacing: .5px;
+    color: black
+}
+
+.checkoutBottomLeft span {
+    color: red;
+}
+
+.checkoutText4 {
+    font-family: Inter-Bold;
+    font-size: 18px;
+    letter-spacing: .5px;
+    cursor: default;
+}
+
+.checkoutBottomLeftNameInputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.checkoutBottomLeftNameInputs div {
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkoutBottomLeftCompanyInput {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkoutBottomLeftCountryInput {
+    display: flex;
+    flex-direction: column;
+}
+
+.selectCountry {
+    width: 100%;
+    height: 50px;
+    border: 1px solid rgb(235 235 235);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 15px;
+    font-family: Inter-Regular;
+    letter-spacing: .5px;
+    margin-top: 10px;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.selectCountry i {
+    font-size: 12px;
+}
+
+.chooseCountry {
+    width: 100%;
+    height: 300px;
+    border: 1px solid rgb(235 235 235);
+    background-color: white;
+    padding: 10px 0 0 20px;
+    font-size: 15px;
+    font-family: Inter-Regular;
+    letter-spacing: .5px;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    overflow-y: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    cursor: default;
+}
+
+.chooseCountry.opacity {
+    display: flex;
+}
+
+.chooseCountry p {
+    cursor: pointer;
+    color: rgb(85, 85, 85);
+    padding-bottom: 10px;
+}
+
+.chooseCountry p:hover {
+    font-family: Inter-Bold;
+    color: black;
+}
+
+.chooseCountry::-webkit-scrollbar {
+    width: 4px;
+}
+
+.chooseCountry::-webkit-scrollbar-track {
+    background: #F0F0F0;
+}
+
+.chooseCountry::-webkit-scrollbar-thumb {
+    background: #949494;
+}
+
+.checkoutBottomLeftStreetAdress {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkoutBottomLeftStreetAdress div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkoutBottomLeftPostcode,
+.checkoutBottomTown,
+.checkoutBottomPhone,
+.checkoutBottomEmail,
+.checkoutBottomUsername,
+.checkoutBottomPassword {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkoutBottomNotes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkoutBottomNotes input {
+    height: 220px;
+    padding-bottom: 170px;
+    padding-right: 20px;
+}
+
+.checkoutBottomNotes input::placeholder{
+    white-space: normal;
+}
+
+.checkoutBottomRight {
+    width: 405px;
+    min-width: 405px;
+    background-color: #EFEFEF;
+    padding: 30px;
+}
+
+.checkoutText6 {
+    font-family: Inter-Bold;
+    font-size: 15px;
+    letter-spacing: .5px;
+}
+
+.checkoutBottomRight1{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-bottom: 1px solid #D7D7D7;
+    padding-bottom: 24px;
+}
+
+.checkoutBottomRight1 div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.checkoutText7 {
+    font-family: Inter-Regular;
+    font-size: 15px;
+    letter-spacing: .5px;
+    padding-right: 50px;
+    line-height: 22px;
+}
+
+.checkoutBottomRight2{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 1px solid #D7D7D7;
+    padding: 24px 0;
+}
+
+.checkoutBottomRight2Main{
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkoutBottomRight3, .checkoutBottomRight4, .checkoutBottomRight5{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #D7D7D7;
+    padding: 24px 0;
+}
+
+.checkoutBottomRight4Radio{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.checkoutBottomRight4Radio label{
+    font-family: Inter-Regular;
+    font-size: 15px;
+    color: black;
+    letter-spacing: .5px;
+    display: flex;
+    gap: 8px;
+}
+
+.checkoutBottomRight6{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 24px;
+}
+
+.checkoutBottomRight6 label{
+    font-family: Inter-Regular;
+    font-size: 15px;
+    color: black;
+    letter-spacing: .5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkoutBottomRight6Checkbox{
+    display: flex;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.checkoutBottomRight6Checkbox input{
+    width: 16px;
+    height: 16px;
+}
+
+.checkoutBottomRight6Terms{
+    color: black;
+    text-decoration: underline;
+}
+
+.checkoutBottomRight6 button{
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    font-family: Inter-SemiBold;
+    font-size: 15px;
+    border: none;
+    letter-spacing: .5px;
+    cursor: pointer;
+    transition: 200ms;
+    margin-top: 10px;
+}
+
+.checkoutBottomRight6 button:hover {
+    background-color: rgb(209 2 2);
+}
+
+.emptyCheckout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.emptyCheckout div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.emptyCheckout img{
+    opacity: .5;
+}
+
+.emptyCheckoutText1{
+    width: 100%;
+    padding: 16px 24px;
+    background-color: #EFEFEF;
+    font-family: Inter-Regular;
+    font-size: 15px;
+    color: black;
+    letter-spacing: .5px;
+    letter-spacing: .5px;
+}
+
+.emptyCheckoutButton{
+    width: 240px;
+    height: 50px;
+    background-color: black;color: white;
+    font-family: Inter-SemiBold;
+    font-size: 15px;
+    border: none;
+    letter-spacing: .5px;
+    cursor: pointer;
+    transition: 200ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.emptyCheckoutButton:hover {
+    background-color: rgb(209 2 2);
+}
+
+@media only screen and (max-width: 1280px) {
+    .checkoutBottomLeftNameInputs{
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .checkoutBottomLeftNameInputs div{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 930px){
+    .checkoutBottom{
+        flex-direction: column;
+    }
+
+    .checkoutBottomLeft, .checkoutBottomRight{
+        width: 100%;
+        min-width: 0;
+    }
+
+    .checkoutBottomRight2Main{
+        align-items: center;
+    }
+
+    .checkout {
+        margin: 50px 0;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .checkoutContainer{
+        padding: 0 10px;
+    }
+
+    .checkoutLoginSettingsFormTop{
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .checkoutLoginSettingsFormTop div{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 420px){
+    .checkoutLogin, .checkoutCoupon{
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        padding: 16px 20px;
+    }
+
+    .checkoutLoginSettings.scale, .checkoutCouponSettings.scale{
+        padding: 16px 20px;
+    }
+
+    .checkoutBottomRight{
+        padding: 20px;
+    }
+
+    .checkoutLoginSettingsFormMiddle{
+        flex-direction: column;
+        align-items: start;
+        gap: 15px;
+        padding-top: 25px;
+    }
+
+    .checkoutLoginSettingsFormMiddle div{
+        order: 1;
+    }
+
+    .checkoutLoginSettingsFormMiddle button{
+        order: 2;
+        width: 100%;
+    }
+
+    .checkoutBottomRight6Checkbox{
+        align-items: start;
+    }
+}
+

@@ -1,0 +1,288 @@
+.slider3{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+    padding: 0 30px;
+    margin: 100px 0;
+}
+
+.slider3Header {
+    max-width: 1450px;
+    width: 100%;
+    display: flex;
+    justify-content: center;    
+}
+
+.slider3Header p {
+    font-family: Inter-Bold;
+    letter-spacing: .5px;
+    font-size: 25px;
+}
+
+.seeAll {
+    font-family: Inter-Medium;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    transition: 250ms;
+}
+
+.slider3Footer {
+    font-family: Inter-Bold;
+    letter-spacing: 1px;
+    font-size: 13px;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 50px;
+    display: none;
+    transition: 200ms;
+}
+
+.slider3Footer:hover{
+    background-color: black;
+    color: white;
+}
+
+.seeAll i {
+    font-size: 22px;
+}
+
+.seeAll:hover {
+    color: rgb(209 2 2);
+}
+
+.mySwiper3{
+    max-width: 1450px;
+    width: 100%;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide3 {
+    text-align: left;
+    font-size: 18px;
+    background: #fff;
+    cursor: pointer;
+    user-select: none;
+    display: flex;    
+    flex-direction: column;
+}
+
+.swiper-slide3-image{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide3image1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 250ms;
+}
+
+.swiper-slide3-image:hover .slide3image1{
+    opacity: 0;
+}
+
+.swiper-slide3-image:hover .slide3image2{
+    display: block;
+}
+
+.swiper-slide3 img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.swiper-slide3:hover .slider3-cart-options{
+    opacity: 1;
+    bottom: 60px;
+}
+
+.slider3-cart-options{
+    position: absolute;
+    right: 10px;
+    bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    transition: 250ms;
+}
+
+.slider3-cart-options div{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    color: black;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 250ms;
+}
+
+.slider3-cart-options div:hover{
+    background-color: rgb(209 2 2);
+    color: white;
+}
+
+.slider3cartHeart{
+    position: absolute;
+    bottom: 12px;
+    right: 20px;
+    transition: 250ms;
+    z-index: 100;
+}
+
+.slider3-cart-add-to-cart{
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    color: black;
+    font-family: Inter-Bold;
+    letter-spacing: 1px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    transition: 250ms;
+    z-index: 999;
+    border: none;
+    cursor: pointer;
+}
+
+.slider3-cart-add-to-cart.disabled:hover{
+    background-color: white;
+    color: black;
+}
+
+.slider3-cart-add-to-cart:hover{
+    background-color: rgb(209 2 2);
+    color: white;
+}
+
+.slider3-cart-add-to-cart i{
+    font-size: 18px !important;
+}
+
+.swiper-slide3:hover .slider3-cart-add-to-cart{
+    bottom: 0;
+}
+
+.swiper-slide3-image i{
+    font-size: 24px;
+}
+
+.swiper-slide3:hover .slider3cartHeart{
+    opacity: 0;
+    bottom: 60px;
+}
+
+.slider3cartDetails{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 0;
+}
+
+.swiper-slide3-title{
+    font-family: Inter-Regular;
+    color: rgb(44, 44, 44);
+    font-size: 15px;
+}
+
+.swiper-slide3-title:hover{
+    color: rgb(229, 0, 0);
+}
+
+.slider3cartPrice{
+    display: flex;
+    gap: 10px;
+}
+
+.slider3cartNewPrice{
+    font-family: Inter-Bold;
+    font-size: 15px;
+}
+
+.slider3cartOldPrice{
+    font-family: Inter-Medium;
+    font-size: 15px;
+    color: rgb(161, 161, 161);
+    text-decoration: line-through;
+}
+
+.quickView, .compare, .addToWishlist{
+    position: relative;
+    z-index: 999;
+}
+
+.quickView:hover .quickViewBadge, .compare:hover .compareBadge, .addToWishlist:hover .addToWishlistBadge{
+    opacity: 1;
+}
+
+.quickViewBadge, .compareBadge, .addToWishlistBadge{
+    position: absolute;
+    left: -125px;
+    border-radius: 5px !important;
+    width: 110px !important;
+    height: 28px !important;
+    background-color: rgb(209 2 2) !important;
+    color: white !important;
+    font-family: Inter-Regular;
+    font-size: 13px;
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: 250ms;
+    pointer-events: none;
+}
+
+.badgeTriangle{
+    position: absolute;
+    right: -4px;
+    background-color: rgb(209 2 2) !important;
+    border-radius: 0 !important;
+    width: 8px !important;
+    height: 8px !important;
+    transform: rotate(45deg);
+}
+
+@media only screen and (max-width: 768px) {
+    .slider3{
+        padding: 0 10px;
+        gap: 30px;
+        margin: 50px 0;
+    }
+
+    .slider3Header p {
+        font-size: 18px;
+    }
+
+    .seeAll {
+        display: none;
+    }
+
+    .slider3Footer {
+        display: block;
+    }
+
+    .slider3Header {
+        justify-content: center;
+    }
+}

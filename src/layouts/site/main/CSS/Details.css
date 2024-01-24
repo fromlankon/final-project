@@ -1,0 +1,398 @@
+.details {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0
+}
+
+.detailsContainer {
+    max-width: 1450px;
+    width: 100%;
+    padding: 0 30px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.detailsLeft {
+    width: 55%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 14px;
+}
+
+.detailsRight {
+    width: 43%;
+    height: 50vh;
+}
+
+.otherImages {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.otherImages img:hover {
+    opacity: .5;
+}
+
+.active {
+    opacity: .5;
+}
+
+.otherImages div {
+    width: 120px;
+    height: 150px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.otherImages div img {
+    width: 100%;
+    transition: .3s;
+}
+
+.mainImage {
+    width: 630px;
+    height: 800px;
+    overflow: hidden;
+    position: relative;
+}
+
+.mainImage img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.detailsTitle {
+    font-family: Inter-Regular;
+    letter-spacing: .4px;
+    font-size: 30px;
+}
+
+.rate {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-top: 25px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rate p {
+    font-family: Inter-Regular;
+    font-size: 15px;
+}
+
+.detailsStock span {
+    color: #40bf52;
+    font-family: Inter-Medium;
+}
+
+.detailsPrice {
+    font-family: Inter-Regular;
+    font-size: 36px;
+    color: black;
+    padding-top: 30px;
+}
+
+.detailsDescription {
+    font-size: 15px;
+    color: rgb(132 132 132);
+    font-family: Inter-Regular;
+    padding-top: 10px;
+    line-height: 24px;
+    letter-spacing: .6px;
+}
+
+.detailsButtons {
+    padding-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.increaseDecrease {
+    display: flex;
+}
+
+.increaseDecrease div {
+    width: 54px;
+    height: 48px;
+    background-color: #EDEDED;
+    font-family: Inter-Regular;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.detailsCount {
+    font-size: 15px !important;
+    cursor: default !important;
+}
+
+.detailsButtons .detailsButton {
+    width: 100%;
+    height: 48px;
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+    font-family: Inter-Bold;
+    letter-spacing: 1.05px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .3s;
+    user-select: none;
+}
+
+.detailsButtons button:hover {
+    background-color: rgb(209 2 2);
+}
+
+.detailsButtons .detailsButton.disabled:hover{
+    background-color: black;
+    color: white;
+}
+
+.detailsOptions {
+    width: 100%;
+    padding-top: 30px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.detailsOptionsLeft {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.detailsOptionsLeft .bxs-heart{
+    color: red;
+}
+
+.detailsOptionsLeft div {
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.detailsOptionsLeft div:hover {
+    color: rgb(209 2 2);
+}
+
+.detailsOptionsLeft i {
+    font-size: 20px;
+}
+
+.detailsOptionsLeft p {
+    font-family: Inter-Regular;
+    font-size: 14px;
+    letter-spacing: .5px;
+}
+
+.detailsSocialIcons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.detailsSocialIcons i {
+    font-size: 20px;
+    color: black;
+}
+
+.detailsSocialIcons i:hover {
+    color: rgb(209 2 2);
+}
+
+.lightbox {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 9999;
+}
+
+.lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+    margin: auto;
+    border: 10px solid white;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.prev-btn {
+    left: 40px;
+}
+
+.next-btn {
+    right: 40px;
+}
+
+.brandName{
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    letter-spacing: .7px;
+    color: rgb(255, 255, 255);
+    padding: 1px 10px;
+    background-color: #242424;
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    z-index: 100;
+    user-select: none;
+}
+
+@media only screen and (max-width: 1230px) {
+    .detailsLeft{
+        flex-direction: column;
+    }
+
+    .mainImage{
+        width: 100%;
+        height: auto;
+    }
+
+    .otherImages{
+        width: 100%;
+        order: 2;
+        flex-direction: row;
+    }
+
+    .otherImages div{
+        height: auto;
+    }
+
+    .detailsButtons {
+        padding-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 940px){
+    .detailsOptions i {
+        font-size: 16px;
+    }
+
+    .detailsOptionsLeft {
+        gap: 16px;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .detailsContainer{
+        padding: 0 10px;
+    }
+}
+
+@media only screen and (max-width: 810px){
+    .detailsContainer{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .detailsLeft, .detailsRight{
+        width: 100%;
+        height: auto;
+    }
+
+    .detailsOptions i {
+        font-size: 18px;
+    }
+
+    .detailsTitle, .detailsPrice{
+        font-size: 25px;
+    }
+
+    .detailsTitle, .detailsPrice, .detailsDescription{
+        text-align: center;
+    }
+
+    .detailsPrice{
+        padding-top: 14px;
+    }
+
+    .rate{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px !important;
+        padding-top: 14px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .otherImages{
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .detailsContainer{
+        gap: 15px;
+    }
+
+    .rate {
+        padding-top: 15px;
+    }
+
+    .detailsPrice{
+        padding-top: 10px;
+    }
+
+    .details{
+        margin: 20px 0;
+    }
+
+    .detailsTitle{
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 370px){
+    .increaseDecrease div{
+        width: 40px;
+    }
+
+    .detailsOptions{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding-top: 16px;
+    }
+}

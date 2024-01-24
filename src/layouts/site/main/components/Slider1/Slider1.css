@@ -1,0 +1,152 @@
+.slider1 {
+    width: 100%;
+    height: 85vh;
+    cursor: pointer;
+}
+
+.swiper {
+    height: 100%;
+}
+
+.swiper-slide {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.sliderText{
+    position: absolute;
+    left: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 48px;
+}
+
+.sliderText1{
+    font-family: Inter-Regular;
+    letter-spacing: 1px;
+    text-align: left;
+    line-height: 40px;
+}
+
+.sliderText2{
+    font-family: Inter-Regular;
+    letter-spacing: 2px;
+    font-size: 72px;
+    text-align: left;
+    transform: translateX(-6px);
+}
+
+.sliderText3{
+    font-family: Inter-SemiBold;
+    font-size: 16px;
+    text-align: left;
+    padding-top: 12px;
+}
+
+.sliderText3 span{
+    font-family: Inter-Regular;
+}
+
+.sliderLink{
+    font-family: Inter-Bold;
+    font-size: 14px;
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom !important;   
+}
+
+.swiper-slide .sliderImage2{
+    object-position: top !important;
+}
+
+.swiper-pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding-bottom: 20px;
+}
+
+.swiper-pagination-bullet{
+    background-color: transparent;
+    width: 14px;
+    height: 14px;
+    border: 1px solid black;
+    border-radius: 100%;
+    opacity: 1;
+    margin-left: 20px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: black;
+    width: 14px;
+    height: 14px;
+}
+
+@media only screen and (max-width: 1140px) {
+    .sliderText{
+        left: 50%;
+        transform: translateX(-50%);
+        align-items: center;
+        width: 100%;
+    }
+
+    .sliderText1, .sliderText2, .sliderText3{
+        text-align: center;
+    }
+
+    .sliderText2{
+        font-size: 50px;
+    }
+
+    .slider1{
+        height: 60vh;
+    }
+
+    .mySwiper img{
+        height: 100%;
+        object-position: 0 100% !important;
+    }
+}
+
+@media only screen and (max-width: 970px) {
+    .sliderText{
+        gap: 20px;
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    .sliderText2{
+        font-size: 28px;
+    }
+
+    .sliderText{
+        top: 50px;
+    }
+
+    .sliderImage2Text2{
+        position: absolute;
+        top: 140px;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .mySwiper1 img{
+        object-position: 80% 0 !important;
+    }
+}

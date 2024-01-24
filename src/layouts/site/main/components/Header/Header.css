@@ -1,0 +1,249 @@
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    position: relative;
+    z-index: 9999;
+    transition: .3s;
+    border-bottom: 1px solid rgb(227, 227, 227);
+}
+
+.headerAnimation{
+    position: fixed;
+    top: -100%;
+    left: 0;
+    transition: .5s;
+    z-index: 9999;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 100%;
+}
+
+.headerAnimation.scroll{
+    top: 0;
+}
+
+.headerMain {
+    width: 100%;
+    max-width: 1450px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+#logo img {
+    width: 160px;
+}
+
+.headerMain ul {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.headerMain ul li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    user-select: none;
+    padding: 30px 0;
+    transition: 200ms;
+}
+
+.headerLink.padding{
+    padding: 15px 0;
+}
+
+.shop, .women, .men, .kids {
+    font-size: 16px;
+    padding: 16px 0;
+    position: relative;
+    color: black;
+    font-family: Inter-Regular;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.shop::after, .women::after, .men::after, .kids::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 14px;
+    width: 0;
+    height: 1px;
+    background-color: black;
+    transition: .3s;
+}
+
+.shop:hover::after, .women:hover::after, .men:hover::after, .kids:hover::after{
+    width: 50%;
+}
+
+.shop::before, .women::before, .men::before, .kids::before{
+    content: "";
+    position: absolute;
+    right: 50%;
+    bottom: 14px;
+    width: 0;
+    height: 1px;
+    background-color: black;
+    transition: .3s;
+}
+
+.shop:hover::before, .women:hover::before, .men:hover::before, .kids:hover::before{
+    width: 50%;
+}
+
+.headerChev {
+    font-size: 10px;
+}
+
+.searchIcon img, .userIcon img, .wishlistIcon img, .cartIcon img {
+    width: 22px;
+}
+
+.headerRight {
+    display: flex;
+    gap: 30px;
+    user-select: none;
+}
+
+.wishlistIcon span, .cartIcon span {
+    position: absolute;
+    right: -12px;
+    top: -12px;
+    width: 22px;
+    height: 22px;
+    border-radius: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    line-height: 22px;
+    font-family: Inter-Regular;
+    font-size: 12px;
+}
+
+.wishlistIcon, .cartIcon {
+    position: relative;
+}
+
+.headerRight div{
+    cursor: pointer !important;
+}
+
+.search{
+    cursor: pointer;
+}
+
+.basketCount.hidden {
+    display: none;
+}
+
+.bar {
+    display: none;
+    cursor: pointer;
+}
+
+.bar img {
+    width: 35px;
+}
+
+.userIcon{
+    position: relative;
+}
+
+.loginDropdown{
+    position: absolute;
+    top: 30px;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    overflow: hidden;
+    border-radius: 3px;
+    width: 240px;
+}
+
+.loginDropdown.flex{
+    display: flex !important;
+}
+
+.loginContent{
+    padding: 8px 10px;
+    font-family: Inter-Regular;
+    letter-spacing: .5px;
+    color: rgb(49, 49, 49);
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.loginDropdownImage{
+    width: 20px;
+    height: 20px;
+}
+
+.loginDropdownImage img{
+    width: 100%;
+}
+
+.loginContent:hover{
+    background-color: rgb(237, 237, 237);
+}
+
+.loginDropdownUserEmail{
+    border-bottom: 1px solid rgb(232, 232, 232);
+}
+
+.loginDropdownUserEmail img{
+    width: 16px;
+    
+}
+
+.headerUserEmail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px;
+    font-family: Poppins-Regular;
+    font-size: 15px;
+    color: red;
+    cursor: default;
+}
+
+@media only screen and (max-width: 900px) {
+    .headerMain ul, .headerRight {
+        display: none;
+    }
+
+    .bar {
+        display: block;
+    }
+
+    .header{
+        padding: 15px 0;
+    }
+
+    #logo img {
+        width: 120px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .headerMain{
+        padding: 0 10px;
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    .headerRight {
+        gap: 15px;
+    }
+}

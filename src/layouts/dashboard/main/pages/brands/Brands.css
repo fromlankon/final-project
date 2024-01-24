@@ -1,0 +1,191 @@
+.brandsMain{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 50px 0;
+}
+
+.brandsOptions{
+    display: flex;
+    justify-content: end;
+    background-color: white;
+    padding: 20px 10px;
+    border-radius: 7px;
+}
+
+.brandsModalOverlay{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.brandsModalOverlay.modalToggle{
+    display: flex;
+}
+
+.brandsModal{
+    padding: 60px 70px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    border-radius: 7px;
+}
+
+.brandsTitleInput{
+    width: 300px;
+    height: 40px;
+    outline: none;
+    border: 1px solid rgb(220, 220, 220);
+    background-color: #F3F4F6;
+    padding-left: 12px;
+    font-family: Inter-Regular;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.upload-list-inline .ant-btn{
+    width: 300px;
+    height: 40px;
+}
+
+.upload-list-inline .ant-upload-list-item{
+    height: 80px !important;
+}
+
+.brandsButton{
+    width: 300px;
+    height: 40px;
+    border: none;
+    background-color: #10B981;
+    color: white;
+    font-family: Inter-Bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 150ms;
+}
+
+.brandsButton:hover{
+    background-color: #039068;
+}
+
+.brandsModal .closeModal{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-weight: 900;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.brandsButtonMain{
+    padding: 0 30px;
+    height: 50px;
+    border: none;
+    background-color: #10B981;
+    color: white;
+    font-family: Inter-SemiBold;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 150ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.brandsButtonMain:hover{
+    background-color: #039068;
+}
+
+.brandsButtonMain i{
+    font-size: 12px;
+}
+
+table{
+    border: 1px solid #d6dae1;
+}
+
+.brandsUpdateModalOverlay{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.brandsUpdateModalOverlay.modalToggle{
+    display: flex;
+}
+
+.brandsUpdateModal{
+    padding: 60px 70px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    border-radius: 7px;
+}
+
+.brandsUpdateModal .closeUpdateModal{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-weight: 900;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.updateImage{
+    width: 80px;
+    height: 80px;
+    border: 1px solid rgb(243 244 246);
+    position: relative;
+}
+
+.updateImage img{
+    width: 100%;
+}
+
+.updateImage .deleteImage{
+    width: 14px;
+    height: 14px;
+    border: 1px solid #ef2525;
+    border-radius: 100%;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.updateImage i{
+    font-size: 10px;
+    color: #ef2525;
+}
+
+.ant-btn-danger:hover{
+    background-color: #f35262 !important;
+}

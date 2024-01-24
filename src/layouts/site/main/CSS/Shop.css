@@ -1,0 +1,614 @@
+.shopPage{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.shopContainer{
+    width: 100%;
+    max-width: 1450px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.shopLocation{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.shopText1{
+    font-family: Inter-Regular;
+    color: rgb(132 132 132);
+    font-size: 15px;
+    letter-spacing: .5px;
+}
+
+.shopText1:hover{
+    text-decoration: underline;
+}
+
+.shopText2{
+    font-family: Inter-Regular;
+    font-size: 15px;
+    letter-spacing: .5px;
+    cursor: default;
+}
+
+.shopMain{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.shopOptions{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 305px;
+}
+
+.shopProducts{
+    width: 76%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.brandOptions{
+    font-family: Inter-Regular;
+    font-size: 15px;
+    letter-spacing: .6px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.brandOptions div{
+    display: flex;
+    align-content: center;
+    gap: 10px;
+}
+
+.brandOptionsHeader{
+    background-color: #EFEFEF;
+    font-family: Inter-Bold;
+    letter-spacing: .6px;
+    font-size: 15px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+}
+
+.brandOptionsInputs{
+    display: flex;
+    flex-direction: column;
+    gap: 14px !important;
+    padding-left: 16px;
+}
+
+.brandOptionsInputs label{
+    display: flex;
+    gap: 10px;
+}
+
+.brandOptionsInputs input{
+    width: 18px;
+    height: 18px;
+}
+
+.brandOptions label{
+    cursor: pointer;
+}
+
+.shopProductsHeader{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+.shopProductsHeaderLeft{
+    display: flex;
+    gap: 10px;
+    background-color: #EFEFEF;
+    padding: 10px 16px;
+    font-size: 15px;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
+
+.shopProductsHeaderLeft label{
+    display: flex;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.shopProductsHeaderLeft input{
+    width: 18px;
+    height: 18px;
+}
+
+.shopOptions button, .shopOptions-2 button{
+    width: 100%;
+    height: 50px;
+    border: none;
+    background-color: black;
+    color: white;
+    letter-spacing: .7px;
+    cursor: pointer;
+    font-family: Inter-Bold;
+    font-size: 14px;
+    transition: 200ms;
+}
+
+.shopOptions button:hover {
+    background-color: rgb(209 2 2);
+}
+
+.shopProductsHeaderRight{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background-color: #EFEFEF;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    width: 240px;
+}
+
+.sortList.sortOpen{
+    display: block;
+}
+
+.shopProductsHeaderRight p{
+    font-family: Inter-Regular;
+    font-size: 15px;
+    letter-spacing: .5px;
+}
+
+.shopProductsHeaderRight i{
+    font-size: 14px;
+}
+
+.sortList{
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #EFEFEF;
+    border-top: none;
+    font-family: Inter-Regular;
+    font-size: 15px;
+    letter-spacing: .5px;
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+}
+
+.sortList div{
+    padding: 10px 16px;
+}
+
+.sortList div:hover{
+    background-color: #EFEFEF;
+}
+
+.shopProductsBody{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    row-gap: 60px;
+}
+
+.shopCard{
+    width: 100%;
+}
+
+.shopCardImage{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.shopCardImage img{
+    width: 100%;
+}
+
+.shopCardImage1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 250ms;
+}
+
+.shopCard:hover .shopCardImage1{
+    opacity: 0;
+}
+
+.shopCard:hover .shopCardOptions{
+    opacity: 1;
+    bottom: 60px;
+}
+
+.shopCardOptions{
+    position: absolute;
+    right: 10px;
+    bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    transition: 250ms;
+}
+
+.shopCardOptions div{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    color: black;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 250ms;
+}
+
+.shopCardOptions div:hover{
+    background-color: rgb(209 2 2);
+    color: white;
+}
+
+.shopCardHeart{
+    position: absolute;
+    bottom: 12px;
+    right: 20px;
+    transition: 250ms;
+    z-index: 100;
+}
+
+.shopCardAddToCart{
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    color: black;
+    font-family: Inter-Bold;
+    letter-spacing: 1px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    transition: 250ms;
+    z-index: 999;
+    border: none;
+    cursor: pointer;
+}
+
+.shopCardAddToCart.disabled:hover{
+    background-color: white;
+    color: black;
+}
+
+.shopCardAddToCart:hover{
+    background-color: rgb(209 2 2);
+    color: white;
+}
+
+.shopCard:hover .shopCardAddToCart{
+    bottom: 0;
+}
+
+.shopCardAddToCart i{
+    font-size: 16px !important;
+    position: absolute;
+    left: 94px;
+}
+
+.shopCardImage i{
+    font-size: 24px;
+}
+
+.shopCard:hover .shopCardHeart{
+    opacity: 0;
+    bottom: 60px;
+}
+
+.shopCardDetails{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 16px;
+}
+
+.shopCardTitle{
+    font-family: Inter-Regular;
+    color: rgb(44, 44, 44);
+    font-size: 15px;
+}
+
+.shopCardTitle:hover{
+    color: rgb(229, 0, 0);
+}
+
+.shopCardPrice{
+    display: flex;
+    gap: 10px;
+}
+
+.shopCardNewPrice{
+    font-family: Inter-Bold;
+    font-size: 15px;
+}
+
+.shopCardOldPrice{
+    font-family: Inter-Medium;
+    font-size: 15px;
+    color: rgb(161, 161, 161);
+    text-decoration: line-through;
+}
+
+.wishlist{
+    cursor: pointer;
+}
+
+.quickView, .compare, .addToWishlist{
+    position: relative;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.quickView:hover .quickViewBadge, .compare:hover .compareBadge, .addToWishlist:hover .addToWishlistBadge{
+    opacity: 1;
+}
+
+.quickViewBadge, .compareBadge, .addToWishlistBadge{
+    position: absolute;
+    left: -125px;
+    border-radius: 5px !important;
+    width: 110px !important;
+    height: 28px !important;
+    background-color: rgb(209 2 2) !important;
+    color: white !important;
+    font-family: Inter-Regular;
+    font-size: 13px;
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: 250ms;
+    pointer-events: none;
+}
+
+.shopPagination{
+    display: flex;
+    gap: 10px;
+}
+
+.shopPagination button, .paginationButton{
+    width: 40px;
+    height: 40px;
+    background-color: #eeeeee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Inter-Regular;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 200ms;
+    border: none;
+}
+
+.paginationButton.disabled:hover{
+    background-color: #eeeeee;
+    color: #C0ABAB;
+}
+
+.paginationButton.activeButton{
+    background-color: black;
+    color: white;
+    cursor: default;
+}
+
+.shopPagination button.disabled:hover{
+    background-color: #eeeeee;
+    color: #C0ABAB;
+}
+
+.shopPagination button:hover{
+    background-color: black;
+    color: white;
+}
+
+.shopPagination i{
+    font-size: 25px;
+}
+
+.filterBarButton{
+    display: none;
+    align-items: center;
+    gap: 6px;
+    background-color: #EFEFEF;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.filterBarButton p{
+    font-size: 14px;
+    letter-spacing: .5px;
+    font-family: Inter-Bold;
+    padding-bottom: 2px;
+}
+
+.filterBarButton img{
+    width: 22px;
+}
+
+.filterBarOverlay{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: none;
+    z-index: 9999;
+    pointer-events: none;
+    transition: .3s;
+}
+
+.filterBarOverlay.toggle{
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: all;
+}
+
+.filterBar{
+    width: 320px;
+    height: 100vh;
+    position: fixed;
+    right: -320px;
+    top: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 0;
+    transition: .3s;
+}
+
+.filterBar.toggle{
+    right: 0px;
+}
+
+.shopProductsHeaderLeft-2{
+    border-bottom: 1px solid rgb(223, 223, 223);
+    width: 100%;
+    height: 50px;
+    padding-left: 30px;
+}
+
+.shopProductsHeaderLeft-2 input{
+    width: 17px;
+    height: 17px;
+}
+
+.shopProductsHeaderLeft-2 label{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: Inter-Bold;
+    font-size: 15px;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
+
+.shopOptions-2{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 0 30px;
+}
+
+.shopOptions-2 .brandOptions{
+    gap: 10px;
+}
+
+.shopOptions-2 .brandOptionsHeader{
+    background: none;
+    padding: 0;
+}
+
+.shopOptions-2 .brandOptionsInputs{
+    padding: 0;
+}
+
+.shopOptions-2 .brandRange{
+    width: 100%;
+}
+
+.filterCloseButton{
+    background-color: rgb(209 2 2) !important;
+    transform: translateY(-10px);
+}
+
+@media only screen and (max-width: 1100px) {
+    .shopProductsBody{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 880px){
+    .shopProductsHeader{
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .shopProductsHeaderRight{
+        width: 100%;
+    }
+
+    .shopProducts{
+        width: 100%;
+        gap: 20px;
+    }
+
+    .shopPagination{
+        padding-top: 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .filterBarOverlay{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .shopProductsBody{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        row-gap: 40px;
+    }
+
+    .shopContainer{
+        padding: 0 10px;
+    }
+
+    .shopOptions{
+        display: none;
+    }
+
+    .shopProductsHeaderLeft{
+        display: none;
+    }
+
+    .shopProductsHeader{
+        flex-direction: row;
+        gap: 6px;
+    }
+
+    .filterBarButton{
+        display: flex;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .shopProductsBody{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

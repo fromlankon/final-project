@@ -1,0 +1,290 @@
+.sidebarOverlay {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: .3s;
+    background: none;
+    pointer-events: none;
+    z-index: 15000;
+    opacity: 1 !important;
+}
+
+.sidebar {
+    width: 500px;
+    height: 100vh;
+    position: fixed;
+    right: -500px;
+    top: 0;
+    background-color: white;
+    transition: .5s;
+    z-index: 5000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1 !important;
+}
+
+.sidebarOverlay.active {
+    background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: all;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebarHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.sidebarHeader p {
+    font-family: Inter-Regular;
+}
+
+.closeSidebar {
+    font-size: 22px;
+    cursor: pointer;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+}
+
+.sidebarCard {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.sidebarCardMain {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    overflow-y: auto;
+    padding: 0px 40px;
+}
+
+.sidebarCardMain::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #b5b5b5;
+}
+
+::-webkit-scrollbar-thumb {
+    background: black;
+}
+
+.sidebarCardImage {
+    width: 100px;
+    min-width: 100px;
+    height: 127px;
+    min-height: 127px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.sidebarCardImage img {
+    width: 100%;
+}
+
+.sidebarCardData {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-left: 16px;
+}
+
+.sidebarCardDetails {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.incDec {
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    background-color: #EDEDED;
+}
+
+.incDec div {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-family: Inter-Regular;
+    background-color: #EDEDED;
+}
+
+.incDec div input {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-align: center;
+    color: #838383;
+}
+
+.incDec i {
+    font-size: 12px;
+}
+
+.increase, .decrease {
+    cursor: pointer;
+}
+
+.sidebarCardTitle {
+    font-family: Inter-Regular;
+    font-size: 15px;
+    letter-spacing: .5px;
+    padding-right: 46px;
+    line-height: 24px;
+    color: black;
+    transition: 200ms;
+}
+
+.sidebarCardPrice {
+    font-family: Inter-Regular;
+    font-size: 15px;
+    display: flex;
+    align-items: start;
+    gap: 3px;
+}
+
+.sidebarCardPrice span {
+    font-size: 10px;
+    padding-top: 1px;
+}
+
+.fa-trash-can {
+    color: #272727;
+    cursor: pointer;
+}
+
+.sidebarFooter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px 40px;
+}
+
+.cardSubtotal {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Inter-Bold;
+    font-size: 18px;
+    letter-spacing: .7px;
+}
+
+.sidebarFooterButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebarFooterButton1 {
+    width: 100%;
+    height: 50px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    font-family: Inter-Bold;
+    letter-spacing: .7px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 150ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebarFooterButton1:hover {
+    border: 1px solid rgb(209 2 2);
+    color: rgb(209 2 2);
+}
+
+.sidebarFooterButton2 {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    border: none;
+    color: white;
+    font-family: Inter-Bold;
+    letter-spacing: .7px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 150ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebarFooterButton2:hover {
+    background-color: rgb(209 2 2);
+}
+
+.deleteItem {
+    position: absolute;
+    right: 10px;
+    font-size: 18px;
+    transition: 200ms;
+}
+
+.deleteItem:hover {
+    color: rgb(209 2 2);
+}
+
+.emptyCart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.emptyCart img {
+    opacity: .5;
+}
+
+.emptyCart p {
+    font-family: Inter-Regular;
+    font-size: 15px;
+    letter-spacing: .5px;
+}
+
+.loadingGif{
+    width: 100px;
+}
+
+@media only screen and (max-width: 670px) {
+    .sidebar {
+        width: 320px;
+    }
+}

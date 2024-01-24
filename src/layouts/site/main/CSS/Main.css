@@ -1,0 +1,205 @@
+@import "../CSS/Root.css";
+
+#loading{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.collection{
+    background-image: url("https://demothemesky-be87.kxcdn.com/nooni-fashion/wp-content/uploads/2023/04/background-section-2-1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 76vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.collectionContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.collectionText1{
+    font-family: Inter-Regular;
+    letter-spacing: 1px;
+    text-align: left;
+    line-height: 40px;
+    font-size: 18px;
+}
+
+.collectionText2{
+    font-family: Inter-Regular;
+    letter-spacing: 2px;
+    font-size: 60px;
+    text-align: left;
+    transform: translateX(-6px);
+}
+
+.collectionLink{
+    font-family: Inter-Bold;
+    font-size: 14px;
+    color: black;
+    border-bottom: 1px solid black;
+    padding-top: 50px;
+}
+
+.flashSale{
+    width: 100%;
+    height: 50vh;
+    background-image: url("https://demothemesky-be87.kxcdn.com/nooni-fashion/wp-content/uploads/2023/04/background-section-3.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.flashSaleOverlay{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.flashSaleText1{
+    font-family: Inter-Medium;
+    color: white;
+    letter-spacing: 8px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.flashSaleText2{
+    font-family: Inter-Medium;
+    color: white;
+    font-size: 140px;
+    text-align: center;
+}
+
+.flashSaleText3{
+    font-family: Inter-Regular;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    line-height: 28px;
+}
+
+.flashSaleLink{
+    font-family: Inter-Bold;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    border-bottom: 1px solid white;
+}
+
+.notFound{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.notFoundContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 60px;
+}
+
+.notFound img{
+    padding-top: 50px;
+}
+
+.notFoundText1{
+    color: #212B36;
+    letter-spacing: 1px;
+    font-family: Poppins-SemiBold;
+    font-size: 50px;
+    padding-top: 40px;
+}
+
+.notFoundText2{
+    color: #414A51;
+    letter-spacing: 1px;
+    font-family: Poppins-Regular;
+    font-weight: 500;
+}
+
+.notFound button{
+    background-color: #624BFF;
+    border: none;
+    color: white;
+    font-family: Poppins-Medium;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 8px 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.notFound button:hover{
+    background-color: #4230ba;
+}
+
+@media only screen and (max-width: 1000px) {
+    .flashSaleOverlay{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .collectionText2{
+        font-size: 40px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .flashSaleOverlay{
+        width: 100%;
+    }
+
+    .flashSaleText1{
+        font-size: 18px;
+    }
+
+    .flashSaleText3{
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    .flashSaleText2{
+        font-size: 60px;
+        letter-spacing: 2px;
+    }
+
+    .flashSaleLink{
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .collectionText2{
+        font-size: 26px;
+    }
+}

@@ -1,0 +1,232 @@
+.dashboard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.ordersInformation {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+    padding: 50px 100px 0 100px;
+    gap: 10px;
+}
+
+.ordersInformation div img {
+    width: 40px;
+}
+
+.ordersInformationBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.ordersInformationBottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 10px;
+}
+
+.ordersInformationBlock1 {
+    width: 100%;
+    height: 190px;
+    border-radius: 10px;
+    background-color: #0D9488;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 14px;
+}
+
+.ordersInformationBlock2 {
+    width: 100%;
+    height: 190px;
+    border-radius: 10px;
+    background-color: #FB923C;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 14px;
+}
+
+.ordersInformationBlock3 {
+    width: 100%;
+    height: 190px;
+    border-radius: 10px;
+    background-color: #3B82F6;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 14px;
+}
+
+.ordersInformationBlock4 {
+    width: 100%;
+    height: 190px;
+    border-radius: 10px;
+    background-color: #0891B2;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 14px;
+}
+
+.ordersInformationBlock5 {
+    width: 100%;
+    height: 190px;
+    border-radius: 10px;
+    background-color: #059669;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 14px;
+}
+
+.dashboardText1 {
+    font-family: Poppins-Medium;
+    color: white;
+    font-size: 15px;
+}
+
+.dashboardText2 {
+    font-family: Poppins-SemiBold;
+    color: white;
+    font-size: 24px;
+    padding-top: 10px;
+}
+
+.dashboardText3 {
+    font-family: Poppins-Regular;
+    color: white;
+    font-size: 12px;
+}
+
+.charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 300px;
+    padding: 0 73px;
+}
+
+.dashboardOrderStatistics{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 100px;
+    gap: 15px;
+}
+
+.dashboardOrderStatisticsBlockImage1{
+    width: 48px;
+    height: 48px;
+    background-color: #FFEDD5;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboardOrderStatisticsBlockImage2{
+    width: 48px;
+    height: 48px;
+    background-color: #DBEAFE;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboardOrderStatisticsBlockImage3{
+    width: 48px;
+    height: 48px;
+    background-color: #CCFBF1;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboardOrderStatisticsBlockImage4{
+    width: 48px;
+    height: 48px;
+    background-color: #D1FAE5;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboardOrderStatisticsBlockImage1 img{
+    width: 20px;
+}
+.dashboardOrderStatisticsBlockImage2 img{
+    width: 28px;
+}
+.dashboardOrderStatisticsBlockImage3 img{
+    width: 28px;
+}
+.dashboardOrderStatisticsBlockImage4 img{
+    width: 22px;
+}
+
+.dashboardText4 {
+    font-family: Poppins-Medium;
+    font-size: 14px;
+    color: #4B5563;
+}
+
+.dashboardText5 {
+    font-family: Poppins-SemiBold;
+    font-size: 24px;
+    color: #4B5563;
+}
+
+.dashboardOrderStatisticsBlock1{
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    border: 1px solid #dddfe2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-left: 14px;
+}
+
+.dashboardOrderStatisticsBlock2{
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    border: 1px solid #dddfe2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-left: 14px;
+}
+
+.dashboardOrderStatisticsBlock3{
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    border: 1px solid #dddfe2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-left: 14px;
+}
+
+.dashboardOrderStatisticsBlock4{
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    border: 1px solid #dddfe2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-left: 14px;
+}

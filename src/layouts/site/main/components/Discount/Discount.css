@@ -1,0 +1,166 @@
+.discountPage {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.discountPageMain {
+    width: 100%;
+    max-width: 1450px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.discountPageText1 {
+    font-family: Inter-Medium;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-align: center;
+    line-height: 20px;
+}
+
+.shopNow {
+    color: white;
+    position: relative;
+}
+
+.shopNow::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+}
+
+.discountPageDropDown {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    user-select: none;
+}
+
+.language {
+    position: relative;
+    font-family: Inter-Medium;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 12px 0;
+}
+
+.languageDropDown {
+    position: absolute;
+    top: 39px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 20px 28px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: #444;
+    border-radius: 5px;
+    cursor: default;
+    transition: .3s;
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.language:hover .languageDropDown{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.languageDropDown div {
+    cursor: pointer;
+    transition: 150ms;
+}
+
+.languageDropDown div:hover {
+    color: gray;
+}
+
+.currency {
+    position: relative;
+    font-family: Inter-Medium;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 12px 0;
+}
+
+.currency:hover .currencyDropDown {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.currencyDropDown {
+    position: absolute;
+    top: 39px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px 28px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: #444;
+    border-radius: 5px;
+    cursor: default;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s;
+    background-color: white;
+    z-index: 10000;
+}
+
+.currency:hover .currencyDropDown{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.currencyDropDown div {
+    cursor: pointer;
+    transition: 150ms;
+}
+
+.currencyDropDown div:hover {
+    color: gray;
+}
+
+@media only screen and (max-width: 768px) {
+    .discountPageMain{
+        padding: 0 10px;
+    }
+}
+
+@media only screen and (max-width: 670px) {
+    .discountPageDropDown {
+        display: none;
+    }
+
+    .discountPageMain {
+        justify-content: center;
+    }
+
+    .discountPageText1 {
+        padding: 9px 0;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .discountPageText1 {
+        font-size: 10px;
+    }
+}

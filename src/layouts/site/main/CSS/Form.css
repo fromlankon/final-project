@@ -1,0 +1,163 @@
+.register {
+    width: 100%;
+    margin: 80px 0;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 10px;
+}
+
+.registerForm {
+    padding: 50px 40px;
+    border: 1px solid rgb(209 213 219);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.signinMain {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.registerForm input {
+    width: 420px;
+    height: 42px;
+    background-color: rgb(249 250 251);
+    border: 1px solid rgb(209 213 219);
+    padding-left: 12px;
+    outline: none;
+    font-family: Inter-Regular;
+    font-size: 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.registerForm button {
+    height: 42px;
+    color: white;
+    background-color: #000000;
+    font-family: Inter-Regular;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+    user-select: none;
+    font-size: 17px;
+    transition: .3s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#signinCheckbox {
+    width: 15px;
+    height: 15px;
+    border: none;
+    outline: none;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.registerForm input:focus {
+    border: 2px solid #000000;
+}
+
+.terms,
+.signupLink {
+    color: rgb(209 2 2);
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: rgb(17 24 39);
+    position: relative;
+    font-size: 15px;
+}
+
+.label i {
+    position: absolute;
+    right: 15px;
+    top: 53%;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(77, 77, 77);
+}
+
+#signinPassword {
+    padding-right: 50px;
+}
+
+label {
+    font-family: Inter-Regular;
+    user-select: none;
+    color: rgb(17 24 39);
+}
+
+.signup {
+    font-family: Inter-Bold;
+    font-size: 26px;
+    color: rgb(17 24 39);
+}
+
+.dontHave {
+    font-family: Inter-Regular;
+    color: rgb(17 24 39);
+}
+
+@media only screen and (max-width: 580px) {
+    .registerForm input {
+        height: 40px;
+        width: 100%;
+    }
+
+    .registerForm button {
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .label {
+        font-size: 13px;
+    }
+
+    .registerForm {
+        border: none;
+        box-shadow: none;
+    }
+
+    .checkboxLabel,
+    .dontHave {
+        font-size: 13px;
+    }
+
+    .label i {
+        right: 12px;
+        font-size: 16px;
+        top: 33px;
+    }
+
+    .register {
+        margin: 30px 0;
+    }
+
+    .registerForm {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .registerForm input {
+        width: 100%;
+    }
+}

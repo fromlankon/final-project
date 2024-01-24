@@ -1,0 +1,56 @@
+.section5{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 0;
+    padding: 0 30px;
+}
+
+.section5container{
+    max-width: 1450px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    align-items: center;
+}
+
+.swiper-slide{
+    cursor: pointer;
+    user-select: none;
+}
+
+.mySwiper5 .swiper-slide img {
+    display: block;
+    object-fit: cover;
+    width: 100px;
+}
+
+.section5name{
+    font-family: Inter-Bold;
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 900px) {
+    .section5container{
+        gap: 70px;
+    }    
+}
+
+@media only screen and (max-width: 768px) {
+    .section5name{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .section5{
+        margin: 50px 0;
+    }
+
+    .section5container{
+        gap: 40px;
+    }    
+}

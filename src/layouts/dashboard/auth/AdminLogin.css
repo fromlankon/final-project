@@ -1,0 +1,79 @@
+.adminLogin{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
+.adminLoginContainer{
+    width: 450px;
+    padding: 30px;
+    background-color: #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.adminLoginContainer p{
+    font-family: Poppins-Regular;
+    font-size: 18px;
+}
+
+.adminLoginInputs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.adminLoginInputs input{
+    width: 100%;
+    height: 50px;
+    outline: none;
+    border: none;
+    border: 3px solid #DDDDDD;
+    border-radius: 5px;
+    padding-left: 12px;
+    font-family: Poppins-Regular;
+    font-size: 15px;
+}
+
+.adminLoginInputs input::placeholder{
+    color: #9e9e9e;
+}
+
+.adminLoginPassword{
+    position: relative;
+}
+
+.adminLoginPassword i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: rgb(75, 75, 75);
+    cursor: pointer;
+}
+
+.adminLoginInputs button{
+    width: 100%;
+    height: 50px;
+    border: none;
+    background-color: #19B9E7;
+    color: white;
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.adminLoginInputs button:hover{
+    background-color: #159ec4;
+}
