@@ -72,8 +72,6 @@ export default function ProductsUpdateModal({ openUpdateModal, productsUpdateMod
         }
     };
 
-    console.log(products)
-
     return (
         <div className={`productsUpdateModalOverlay ${productsUpdateModal ? "modalToggle" : ""}`} onClick={handleOverlayClick}>
             <form onSubmit={handleSubmit} className="productsUpdateModal">
@@ -97,7 +95,7 @@ export default function ProductsUpdateModal({ openUpdateModal, productsUpdateMod
                 </div>
                 <textarea name='description' onChange={handleInput} value={products.description} className='descriptionInput' type="name" placeholder='Product description' />
                 <div className='productsUpdateModalImage'>
-                    <input type="file" multiple={true} onChange={(e) => {
+                    <input type="file" id='uploadButton' multiple={true} onChange={(e) => {
                         MultiplyConverter(e).then((res) => {
                             console.log(res)
                             setProducts({ ...products, images: res });
@@ -105,20 +103,16 @@ export default function ProductsUpdateModal({ openUpdateModal, productsUpdateMod
                             console.log(err)
                         })
                     }} />
+                    <label htmlFor="uploadButton" className='uploadButtonLabel'> <img src="../../../../../../src/images/Upload.png"/> Upload Image </label>
                 </div>
                 <div className='productsUpdateModalGetImages'>
-                    <div>
-                        <img src={products?.images?.[0]?.url} />
-                    </div>
-                    <div>
-                        <img src={products?.images?.[1]?.url} />
-                    </div>
-                    <div>
-                        <img src={products?.images?.[2]?.url} />
-                    </div>
-                    <div>
-                        <img src={products?.images?.[3]?.url} />
-                    </div>
+                    {products?.images?.map((img) => {
+                        return (
+                            <div>
+                                <img src={img?.url} />
+                            </div>
+                        )
+                    })}
                 </div>
                 <button type='submit' className='productsButton'> UPDATE PRODUCT </button>
             </form>

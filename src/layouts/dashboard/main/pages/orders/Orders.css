@@ -75,7 +75,7 @@
 }
 
 .ordersInfoModal{
-    width: 1000px;
+    width: 1050px;
     background-color: white;
     border-radius: 7px;
     display: flex;
@@ -141,8 +141,21 @@
     padding-left: 10px;
 }
 
-.ordersTableHeaderQuantity{
+.ordersTableHeaderBrand{
     width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid rgb(230, 230, 230);
+    color:  #656668;
+    letter-spacing: .5px;
+    font-size: 13px;
+    font-family: Poppins-Medium;
+}
+
+.ordersTableHeaderQuantity{
+    width: 13%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -155,7 +168,7 @@
 }
 
 .ordersTableHeaderPrice{
-    width: 20%;
+    width: 13%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -168,7 +181,7 @@
 }
 
 .ordersTableHeaderAmount{
-    width: 20%;
+    width: 14%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -198,8 +211,19 @@
     padding-left: 10px;
 }
 
-.ordersTableBodyQuantity{
+.ordersTableBodyBrand{
     width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid rgb(230, 230, 230);
+    font-family: Poppins-SemiBold;
+    color: #4B5568;
+}
+
+.ordersTableBodyQuantity{
+    width: 13%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -210,7 +234,7 @@
 }
 
 .ordersTableBodyPrice{
-    width: 20%;
+    width: 13%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -221,7 +245,7 @@
 }
 
 .ordersTableBodyAmount{
-    width: 20%;
+    width: 14%;
     height: 100%;
     display: flex;
     align-items: center;

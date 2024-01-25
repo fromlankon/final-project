@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import "./AdminHeader.css"
 import { Link, useNavigate } from 'react-router-dom'
 import { UserContext } from '../../../../../context/AuthContext'
@@ -8,16 +8,26 @@ export default function AdminHeader() {
   const { user } = useContext(UserContext)
   const [settings, setSettings] = useState(false)
   const navigate = useNavigate();
+  const settingsRef = useRef(null);
 
-  const openSettings = () => {
-    setSettings(!settings)
-  }
-
-  const closeSettings = () => {
-    setSettings(false);
+  const toggleSettings = () => {
+    setSettings((prevVisible) => !prevVisible);
   };
 
-  const logout = () => {
+  const closeSettings = (e) => {
+    if (settingsRef.current && !settingsRef.current.contains(e.target)) {
+      setSettings(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', closeSettings);
+    return () => {
+      document.removeEventListener('click', closeSettings);
+    };
+  }, []);
+
+  const logOut = () => {
     localStorage.removeItem("token");
 
     setTimeout(() => {
@@ -25,22 +35,9 @@ export default function AdminHeader() {
     }, 1500);
   }
 
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      const headerSettings = document.querySelector('.headerSettings');
-      if (headerSettings && !headerSettings.contains(e.target)) {
-        closeSettings();
-      }
-    };
-    document.addEventListener('click', handleClickOutside);
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, []);
-
   return (
     <div className='adminHeader'>
-      <div className='headerSettings' onClick={openSettings}>
+      <div className='headerSettings' onClick={toggleSettings} ref={settingsRef}>
         <img className='adminUserImage' src="../../../../src/images/Admin User.png" />
         <div className={`headerSettingsBlock ${settings ? "visible" : ""}`}>
           <Link className='dashboardSettings'>
@@ -52,7 +49,7 @@ export default function AdminHeader() {
             <img className='adminUserImage' src="../../../../src/images/Settings.png" />
             <p> Edit Profile </p>
           </Link>
-          <div className='logOut' onClick={logout}>
+          <div className='logOut' onClick={logOut}>
             <img className='adminUserImage' src="../../../../src/images/Log Out.png" />
             <p> Log Out </p>
           </div>

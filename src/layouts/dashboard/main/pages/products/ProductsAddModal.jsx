@@ -106,9 +106,9 @@ export default function ProductsAddModal({ productsModalOpen, productsModal, get
                         ))}
                     </div>
                 </div>
-                <input name='description' onChange={handleInput} value={products.description} className='descriptionInput' type="name" placeholder='Product description' />
+                <textarea name='description' onChange={handleInput} value={products.description} className='descriptionInput' type="name" placeholder='Product description' />
                 <div className='productsAddModalImage'>
-                    <input type="file" multiple={true} onChange={(e) => {
+                    <input type="file" id='uploadImageButton' multiple={true} onChange={(e) => {
                         MultiplyConverter(e).then((res) => {
                             console.log(res)
                             setProducts({ ...products, images: res });
@@ -116,6 +116,7 @@ export default function ProductsAddModal({ productsModalOpen, productsModal, get
                             console.log(err)
                         })
                     }} />
+                    <label htmlFor="uploadImageButton" className='uploadButtonLabel'> <img src="../../../../../../src/images/Upload.png" /> Upload Image </label>
                 </div>
                 <button type='submit' className='productsButton'> ADD PRODUCT </button>
             </form>

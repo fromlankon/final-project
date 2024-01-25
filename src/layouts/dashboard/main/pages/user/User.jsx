@@ -22,8 +22,6 @@ export default function User() {
       .catch(err => console.error(err));
   };
 
-  console.log(user)
-
   useEffect(() => {
     getUser();
   }, []);

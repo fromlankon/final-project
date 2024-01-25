@@ -50,9 +50,10 @@
     border: 1px solid rgb(220, 220, 220);
     background-color: #F3F4F6;
     padding-left: 12px;
-    font-family: Inter-Regular;
-    font-size: 15px;
     border-radius: 5px;
+    font-family: Poppins-Regular;
+    letter-spacing: .3px;
+    font-size: 14px;
 }
 
 .userNameInputs{
@@ -78,6 +79,12 @@
     font-size: 18px;
     color: rgb(78, 78, 78);
     cursor: pointer;
+}
+
+.userPasswordInput input{
+    font-family: Poppins-Regular;
+    letter-spacing: .3px;
+    font-size: 14px;
 }
 
 .userButton{

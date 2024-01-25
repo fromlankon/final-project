@@ -116,7 +116,7 @@ const ProductsTable = ({ getProducts, data }) => {
       width: "10%",
     },
     {
-      title: "DISCOUNT PRICE",
+      title: "SALE PRICE",
       dataIndex: "salePrice",
       key: "salePrice",
       sorter: (a, b) => a.salePrice - b.salePrice,
@@ -125,7 +125,7 @@ const ProductsTable = ({ getProducts, data }) => {
       render: (text) => <p> ${text} </p>,
     },
     {
-      title: "STOCK COUNT",
+      title: "QUANTITY",
       dataIndex: "stock",
       key: "stock",
       sorter: (a, b) => a.stock - b.stock,

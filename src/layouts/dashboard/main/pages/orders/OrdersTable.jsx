@@ -3,6 +3,7 @@ import { Select, Table } from "antd";
 import moment from 'moment';
 import { API } from "../../../../../config/axios";
 import Loading from "../../../../site/main/components/Loading/Loading";
+import { getBrands } from "../../../../../services/products";
 
 export default function OrdersTable({ data, getOrders }) {
 
@@ -11,15 +12,9 @@ export default function OrdersTable({ data, getOrders }) {
     const [selectedOrderId, setSelectedOrderId] = useState(null);
     const [singleProduct, setSingleProduct] = useState({});
     const [loading, setLoading] = useState(true);
+    const [brands, setBrands] = useState([]);
 
-    const openInfoModal = (record) => {
-        setLoading(true);
-        setInfoModal(!infoModal);
-        setSelectedOrderId(record._id);
-        orderDetails(record._id);
-    };
-
-    const orderDetails = (orderId) => {
+    const getOrderData = (orderId) => {
         if (orderId) {
             API.get(`/dashboard/orders?page=1&perPage=999`)
                 .then((res) => {
@@ -29,13 +24,19 @@ export default function OrdersTable({ data, getOrders }) {
         }
     };
 
+    const openInfoModal = (record) => {
+        setLoading(true);
+        setInfoModal(!infoModal);
+        setSelectedOrderId(record?._id);
+        getOrderData(record._id);
+    };
+
     const singleOrderData = orderData?.find((item) => selectedOrderId === item._id);
 
-    const getSingleBackOrdersProduct = async () => {
+    const getOrderDetails = async () => {
         if (!singleOrderData?.products || !Array.isArray(singleOrderData.products)) {
             return;
         }
-
         let newArr = singleOrderData.products.map((item) => {
             return API.get(`/site/products/${item.productId}`);
         });
@@ -53,8 +54,16 @@ export default function OrdersTable({ data, getOrders }) {
     };
 
     useEffect(() => {
+        getBrands()
+            .then((res) => {
+                setBrands(res.data);
+            })
+            .catch((err) => console.error(err));
+    }, []);
+
+    useEffect(() => {
         if (singleOrderData) {
-            getSingleBackOrdersProduct();
+            getOrderDetails();
         }
     }, [singleOrderData]);
 
@@ -73,7 +82,7 @@ export default function OrdersTable({ data, getOrders }) {
     }, []);
 
     useEffect(() => {
-        orderDetails();
+        getOrderData();
     }, [selectedOrderId]);
 
     const totalAmount = singleOrderData?.products?.reduce((total, item) => (
@@ -94,7 +103,7 @@ export default function OrdersTable({ data, getOrders }) {
             title: "CUSTOMER NAME",
             dataIndex: "customer",
             key: "customer",
-            render: (customer) => customer.name,
+            render: (customer) => <a> {customer.name} </a>,
             width: "25%"
         },
         {
@@ -169,9 +178,7 @@ export default function OrdersTable({ data, getOrders }) {
     return (
         <div>
             <div className={`ordersInfoModalOverlay ${infoModal ? "toggle" : ""}`} onClick={handleOverlayClick}>
-                {loading ? (
-                    <Loading />
-                ) : (
+                {loading ? (<Loading />) : (
                     <div className="ordersInfoModal">
                         <i className="lni lni-close" onClick={openInfoModal}></i>
                         <div className="orderInfoTableMain">
@@ -181,13 +188,15 @@ export default function OrdersTable({ data, getOrders }) {
                         <div className="ordersInfoTable">
                             <div className="ordersInfoTableHeader">
                                 <p className="ordersTableHeaderTitle"> PRODUCT NAME </p>
+                                <p className="ordersTableHeaderBrand"> BRAND NAME </p>
                                 <p className="ordersTableHeaderQuantity"> QUANTITY </p>
-                                <p className="ordersTableHeaderPrice"> PRODUCT PRICE </p>
+                                <p className="ordersTableHeaderPrice"> PRICE </p>
                                 <p className="ordersTableHeaderAmount"> AMOUNT </p>
                             </div>
-                            {singleOrderData?.products?.map((item) => (
+                            {singleOrderData?.products?.map((item, index) => (
                                 <div key={item?._id} className="ordersInfoTableBody">
-                                    <p className="ordersTableBodyTitle"> {singleProduct[item.productId]?.title} </p>
+                                    <p className="ordersTableBodyTitle"> {index + 1}. {singleProduct[item.productId]?.title} </p>
+                                    <p className="ordersTableBodyBrand"> {brands.find(brand => brand._id === singleProduct[item.productId]?.brandId)?.name} </p>
                                     <p className="ordersTableBodyQuantity"> {item?.productCount} </p>
                                     <p className="ordersTableBodyPrice"> ${singleProduct[item.productId]?.salePrice}.00 </p>
                                     <p className="ordersTableBodyAmount"> ${item?.productCount * singleProduct[item?.productId]?.salePrice}.00 </p>
@@ -214,7 +223,6 @@ export default function OrdersTable({ data, getOrders }) {
                         </div>
                     </div>
                 )}
-
             </div>
             <Table className="ordersTable" columns={columns} dataSource={data}
                 pagination={{ pageSize: 10, onChange: handlePaginationChange }} />

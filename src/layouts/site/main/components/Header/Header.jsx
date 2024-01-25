@@ -1,7 +1,7 @@
-import React, { useContext, useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import "./Header.css"
-import Sidebar from '../Sidebar/Sidebar'
+import React, { useContext, useState, useEffect, useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import "./Header.css";
+import Sidebar from '../Sidebar/Sidebar';
 import { BasketContext } from '../../../../../context/BasketContext';
 import { sidebarContext } from '../../../../../context/SidebarContext';
 import { WishlistContext } from '../../../../../context/WishlistContext';
@@ -12,7 +12,6 @@ import Dropdown2 from '../Dropdown/Dropdown2';
 import Dropdown3 from '../Dropdown/Dropdown3';
 import Dropdown4 from '../Dropdown/Dropdown4';
 import { UserContext } from '../../../../../context/AuthContext';
-import { API } from '../../../../../config/axios';
 
 export default function Header() {
 
@@ -20,26 +19,33 @@ export default function Header() {
     const { wishlist } = useContext(WishlistContext);
     const { show, setShow } = useContext(sidebarContext);
     const { user } = useContext(UserContext);
-    const [backData, setBackData] = useState([]);
     const [openHamburger, setOpenHamburger] = useState(false);
     const [login, setLogin] = useState(false);
     const [headerPadding, setHeaderPadding] = useState(false);
-    const [openSearchBar, setOpenSearchBar] = useState(false)
-    const navigate = useNavigate()
+    const [openSearchBar, setOpenSearchBar] = useState(false);
+    const navigate = useNavigate();
+    const userBlock = useRef(null);
+
+    const toggleUserBlock = () => {
+        setLogin((prevVisible) => !prevVisible);
+    };
+
+    const closeUserBlock = (e) => {
+        if (userBlock.current && !userBlock.current.contains(e.target)) {
+            setLogin(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener("click", closeUserBlock);
+        return () => {
+            document.removeEventListener("click", closeUserBlock);
+        };
+    }, []);
 
     const closeHamburger = () => {
         setOpenHamburger(!openHamburger);
     };
-
-    const closeLoginBlock = () => {
-        setLogin(!login)
-    };
-
-    useEffect(() => {
-        API.get("site/basket").then((res) => {
-            setBackData(res.data.data);
-        });
-    }, []);
 
     const [dropdownState, setDropdownState] = useState({
         shop: false,
@@ -77,7 +83,8 @@ export default function Header() {
     const logOut = () => {
         localStorage.removeItem("token")
         setTimeout(() => {
-            navigate("/home")
+            navigate("/home");
+            window.location.reload();
         }, 1000);
     };
 
@@ -103,7 +110,7 @@ export default function Header() {
                         <div className="searchIcon" onClick={() => searchBarToggle()}>
                             <img src="../../../../../src/images/Search.png" />
                         </div>
-                        <div onClick={closeLoginBlock} className="userIcon">
+                        <div className="userIcon" onClick={toggleUserBlock} ref={userBlock}>
                             <img src="../../../../../src/images/User.png" />
                             <div className={`loginDropdown ${login ? "flex" : ""}`}>
                                 {!user ? (<Link to={"/login"} className='loginContent'>

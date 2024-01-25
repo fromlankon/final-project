@@ -1,11 +1,11 @@
-.productsMain{
+.productsMain {
     display: flex;
     flex-direction: column;
     gap: 20px;
     margin: 50px 0;
 }
 
-.productsOptions{
+.productsOptions {
     display: flex;
     justify-content: end;
     background-color: white;
@@ -13,7 +13,7 @@
     border-radius: 7px;
 }
 
-.productsModalOverlay{
+.productsModalOverlay {
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -26,11 +26,11 @@
     justify-content: center;
 }
 
-.productsModalOverlay.modalToggle{
+.productsModalOverlay.modalToggle {
     display: flex;
 }
 
-.productsModal{
+.productsModal {
     padding: 70px;
     width: 600px;
     background-color: white;
@@ -43,46 +43,48 @@
     border-radius: 7px;
 }
 
-.productsTitleInput{
+.productsTitleInput {
     width: 100%;
     height: 40px;
     outline: none;
     border: 1px solid rgb(220, 220, 220);
     background-color: #F3F4F6;
     padding-left: 12px;
-    font-family: Inter-Regular;
     font-size: 14px;
     border-radius: 5px;
+    font-family: Poppins-Regular;
+    letter-spacing: .3px;
 }
 
-.productsTitleInput::placeholder{
+.productsTitleInput::placeholder {
     color: black;
 }
 
-.countInputs{
+.countInputs {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.productsInput{
+.productsInput {
     width: 32%;
     height: 40px;
     outline: none;
     border: 1px solid rgb(220, 220, 220);
     background-color: #F3F4F6;
     padding-left: 12px;
-    font-family: Inter-Regular;
     font-size: 14px;
     border-radius: 5px;
+    font-family: Poppins-Regular;
+    letter-spacing: .3px;
 }
 
-.productsInput::placeholder{
+.productsInput::placeholder {
     color: black;
 }
 
-.productsModalBrandsSelect{
+.productsModalBrandsSelect {
     width: 100%;
     height: 40px;
     border: 1px solid rgb(220, 220, 220);
@@ -98,18 +100,20 @@
     user-select: none;
     cursor: pointer;
     border-radius: 7px;
+    font-family: Poppins-Regular;
+    letter-spacing: .3px;
 }
 
-.productsModalBrandsSelect.block{
+.productsModalBrandsSelect.block {
     border-radius: 7px 7px 0 0;
 }
 
-.productsModalBrandsSelect i{
+.productsModalBrandsSelect i {
     font-size: 12px;
     color: black;
 }
 
-.productsModalBrandsOptions{
+.productsModalBrandsOptions {
     width: 100%;
     position: absolute;
     top: 100%;
@@ -117,7 +121,7 @@
     display: none;
 }
 
-.productsModalBrandsOptions p:nth-child(1){
+.productsModalBrandsOptions p:nth-child(1) {
     border-top: 1px solid rgb(220, 220, 220);
 }
 
@@ -125,12 +129,11 @@
     border-radius: 0 0 7px 7px;
 }
 
-.productsModalBrandsOptions p{
+.productsModalBrandsOptions p {
     width: 100%;
     transform: scaleX(100.5%);
     height: 40px;
     background-color: #F3F4F6;
-    font-family: Inter-Regular;
     font-size: 14px;
     position: relative;
     padding-left: 12px;
@@ -141,22 +144,25 @@
     color: black;
 }
 
-.descriptionInput{
+.descriptionInput {
     width: 100%;
     height: 100px;
     border: 1px solid rgb(220, 220, 220);
     background-color: #F3F4F6;
     padding: 4px 12px;
-    font-family: Inter-Regular;
     font-size: 14px;
     border-radius: 7px;
     outline: none;
-    padding-bottom: 65px;
-    line-height: 20px;
     resize: none;
+    font-family: Poppins-Regular;
+    letter-spacing: .3px;
 }
 
-.productsAddModalImage, .productsUpdateModalImage{
+.descriptionInput::placeholder{
+    color: black;
+}
+
+.productsUpdateModalImage, .productsAddModalImage {
     width: 100%;
     height: 40px;
     border: 1px solid rgb(220, 220, 220);
@@ -164,32 +170,56 @@
     border-radius: 7px;
     display: flex;
     align-items: center;
-    padding-left: 12px;
+    transition: 200ms;
 }
 
-.descriptionInput::placeholder{
-    color: black;
-    white-space: normal;
+.productsUpdateModalImage:hover, .productsAddModalImage:hover{
+    background-color: rgb(220, 220, 220);
 }
 
-.productsModalBrandsOptions p:hover{
+#uploadButton[type="file"]{
+    display: none;
+}
+
+#uploadImageButton[type="file"]{
+    display: none;
+}
+
+.uploadButtonLabel{
+    display: inline-block;
+    font-family: Poppins-Medium;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 15px;
+    letter-spacing: .3px;
+    cursor: pointer;
+}
+
+.uploadButtonLabel img{
+    width: 12px;
+    margin-right: 3px;
+}
+
+.productsModalBrandsOptions p:hover {
     background-color: #dcddde;
 }
 
-.productsModalBrandsOptions.block{
+.productsModalBrandsOptions.block {
     display: block;
 }
 
-.upload-list-inline .ant-btn{
+.upload-list-inline .ant-btn {
     width: 300px;
     height: 40px;
 }
 
-.upload-list-inline .ant-upload-list-item{
+.upload-list-inline .ant-upload-list-item {
     height: 80px !important;
 }
 
-.productsButton{
+.productsButton {
     width: 100%;
     height: 40px;
     border: none;
@@ -203,11 +233,11 @@
     user-select: none;
 }
 
-.productsButton:hover{
+.productsButton:hover {
     background-color: #039068;
 }
 
-.productsModal .closeModal{
+.productsModal .closeModal {
     position: absolute;
     right: 20px;
     top: 20px;
@@ -216,7 +246,7 @@
     cursor: pointer;
 }
 
-.productsButtonMain{
+.productsButtonMain {
     padding: 0 30px;
     height: 50px;
     border: none;
@@ -233,19 +263,19 @@
     gap: 6px;
 }
 
-.productsButtonMain:hover{
+.productsButtonMain:hover {
     background-color: #039068;
 }
 
-.productsButtonMain i{
+.productsButtonMain i {
     font-size: 12px;
 }
 
-table{
+table {
     border: 1px solid #d6dae1;
 }
 
-.productsUpdateModalOverlay{
+.productsUpdateModalOverlay {
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -258,11 +288,11 @@ table{
     justify-content: center;
 }
 
-.productsUpdateModalOverlay.modalToggle{
+.productsUpdateModalOverlay.modalToggle {
     display: flex;
 }
 
-.productsUpdateModal{
+.productsUpdateModal {
     padding: 70px;
     width: 600px;
     background-color: white;
@@ -275,7 +305,7 @@ table{
     border-radius: 7px;
 }
 
-.productsUpdateModal .closeModal{
+.productsUpdateModal .closeModal {
     position: absolute;
     right: 20px;
     top: 20px;
@@ -284,7 +314,7 @@ table{
     cursor: pointer;
 }
 
-.productsUpdateModal .closeUpdateModal{
+.productsUpdateModal .closeUpdateModal {
     position: absolute;
     right: 20px;
     top: 20px;
@@ -294,35 +324,43 @@ table{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.productsUpdateModalGetImages{
+.productsUpdateModalGetImages {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.productsUpdateModalGetImages div{
-    width: 100px;
+.productsUpdateModalGetImages div {
+    width: 106px;
     height: 130px;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-.productsUpdateModalGetImages div img{
+.productsUpdateModalGetImages div img {
     width: 100%;
     object-fit: cover;
+    transition: .3s;
 }
 
-.ant-btn-danger:hover{
+.productsUpdateModalGetImages div:hover img {
+    transform: scale(110%);
+}
+
+.ant-btn-danger:hover {
     background-color: #f35262 !important;
 }
 
-.ant-table-column-title, .ant-table-cell{
+.ant-table-column-title,
+.ant-table-cell {
     user-select: none;
 }
 
-.ant-switch{
+.ant-switch {
     background: #ef2525 !important;
 }
 
-.ant-switch-checked{
+.ant-switch-checked {
     background-color: #28A745 !important;
 }

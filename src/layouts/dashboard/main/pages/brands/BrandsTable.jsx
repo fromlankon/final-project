@@ -27,9 +27,8 @@ const BrandsTable = ({ data, getBrands }) => {
             title: "BRAND NAME",
             dataIndex: "name",
             key: "name",
-            render: (text) => <a style={{ userSelect: "none" }}> {text} </a>,
+            render: (name) => <a style={{ userSelect: "none" }}> {name} </a>,
         },
-
         {
             title: "CREATED DATE",
             dataIndex: "createdAt",
