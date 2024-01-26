@@ -2,7 +2,7 @@ import { API } from "../config/axios";
 
 export const getProducts = async (filters) => {
     const page = 1;
-    const perPage = 40;
+    const perPage = 999;
     const search = "";
 
     try {

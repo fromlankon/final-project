@@ -421,14 +421,14 @@
     gap: 10px;
 }
 
-.checkoutBottomNotes input {
+.checkoutBottomNotes textarea {
     height: 220px;
-    padding-bottom: 170px;
-    padding-right: 20px;
-}
-
-.checkoutBottomNotes input::placeholder{
-    white-space: normal;
+    resize: none;
+    border: 1px solid rgb(235 235 235);
+    padding: 12px 20px;
+    font-family: Inter-Regular;
+    font-size: 15px;
+    outline: none;
 }
 
 .checkoutBottomRight {

@@ -1,17 +1,18 @@
 import React, { useContext, useEffect, useState } from 'react'
 import "../../main/CSS/Form.css"
 import { Link, useNavigate } from 'react-router-dom'
-import Header from '../../main/components/Header/Header'
 import { useFormik } from 'formik';
-import Discount from '../../main/components/Discount/Discount';
-import Footer from '../../main/components/Footer/Footer';
 import { LoginCall } from '../../../../services/auth';
 import { UserContext } from '../../../../context/AuthContext';
+import { BasketContext } from '../../../../context/BasketContext';
+import { APIwithToken } from '../../../../config/axios';
 
 export default function Login() {
 
-  const navigate = useNavigate()
-  const { setUser } = useContext(UserContext)
+  const { setUser } = useContext(UserContext);
+  const { basket, setBasket } = useContext(BasketContext);
+  const navigate = useNavigate();
+  const [hide, setHide] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -19,24 +20,51 @@ export default function Login() {
 
   const formik = useFormik({
     initialValues: {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     },
     onSubmit: values => {
       LoginCall(values)
         .then(({ data }) => {
-          console.log(data)
-          localStorage.setItem("token", data.data.token)
-          navigate("/home")
-          setUser(data.data.user)
+          console.log(data);
+          localStorage.setItem("token", data.data.token);
+          if (data.data.user) {
+            if ((basket || []).length > 0) {
+              const formattedBasket = basket.map((item) => ({
+                productId: item._id,
+                productCount: item.productCount,
+              }));
+              console.log(formattedBasket);
+
+              const postmanBasket = formattedBasket.map((item) => ({
+                productId: item.productId,
+                productCount: item.productCount,
+              }));
+              console.log(postmanBasket);
+
+              const postmanRequest = { basket: postmanBasket };
+              console.log(postmanRequest);
+
+              APIwithToken(data.data.token)
+                .post("/site/basket", postmanRequest)
+                .then((res) => {
+                  setBasket([]);
+                  setUser(data.data.user);
+                  navigate("/home");
+                  location.href = "/home";
+                });
+            } else {
+              setBasket([]);
+              setUser(data.data.user);
+              location.href = "/home";
+            }
+          }
         })
         .catch((err) => {
-          console.log(err)
-        })
-    },
+          console.log(err);
+        });
+    }
   });
-
-  const [hide, setHide] = useState(false)
 
   return (
     <>
@@ -50,7 +78,7 @@ export default function Login() {
             </div>
             <div className='label'>
               <label htmlFor="signinPassword"> Password <span style={{ color: "rgb(209 2 2)" }}> * </span> </label>
-              <input name="password" onChange={formik.handleChange} value={formik.values.password} type={hide ? "name" : "password"} id='signinPassword' required="" />
+              <input name="password" onChange={formik.handleChange} value={formik.values.password} type={hide ? "text" : "password"} id='signinPassword' required="" />
               <i onClick={() => setHide(!hide)} className={hide ? "bi-eye-fill" : "bi-eye-slash-fill"}></i>
             </div>
             <button type='Submit'> Sign In </button>

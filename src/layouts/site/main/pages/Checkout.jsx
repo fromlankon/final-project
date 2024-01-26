@@ -123,7 +123,7 @@ export default function Checkout() {
                                 </div>
                                 <div className="checkoutBottomNotes">
                                     <label htmlFor="ordernotes"> Order notes (optional) </label>
-                                    <input type="text" id='ordernotes' placeholder='Notes about your order, e.g. special notes for delivery.' />
+                                    <textarea type="text" id='ordernotes' placeholder='Notes about your order, e.g. special notes for delivery.' />
                                 </div>
                             </div>
                             <div className="checkoutBottomRight">

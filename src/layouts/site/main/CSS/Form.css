@@ -50,8 +50,12 @@
     transition: .3s;
     user-select: none;
     font-size: 17px;
-    transition: .3s;
+    transition: 200ms;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.registerForm button:hover{
+    background-color: rgb(209 2 2);
 }
 
 #signinCheckbox {

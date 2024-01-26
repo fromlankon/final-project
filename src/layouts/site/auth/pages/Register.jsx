@@ -41,20 +41,20 @@ export default function Register() {
           <p className='signup'> Register </p>
           <div className='signinMain'>
             <div className='label'>
-              <label htmlFor="signinName">Name<span style={{ color: "rgb(209 2 2)" }}>*</span> </label>
+              <label htmlFor="signinName">Name<span style={{ color: "rgb(209 2 2)" }}> * </span> </label>
               <input name="name" onChange={formik.handleChange} value={formik.values.name} type="name" id='signinName' required="" />
             </div>
             <div className='label'>
-              <label htmlFor="signinSurname">Surname<span style={{ color: "rgb(209 2 2)" }}>*</span> </label>
+              <label htmlFor="signinSurname">Surname<span style={{ color: "rgb(209 2 2)" }}> * </span> </label>
               <input name="surname" onChange={formik.handleChange} value={formik.values.surname} type="name" id='signinSurname' required="" />
             </div>
             <div className='label'>
-              <label htmlFor="signinMail">Email<span style={{ color: "rgb(209 2 2)" }}>*</span> </label>
+              <label htmlFor="signinMail">Email<span style={{ color: "rgb(209 2 2)" }}> * </span> </label>
               <input name="email" onChange={formik.handleChange} value={formik.values.email} type="mail" id='signinMail' required="" />
             </div>
             <div className='label'>
-              <label htmlFor="signinPassword">Password<span style={{ color: "rgb(209 2 2)" }}>*</span> </label>
-              <input name="password" onChange={formik.handleChange} value={formik.values.password} type={hide ? "name" : "password"} id='signinPassword' required="" />
+              <label htmlFor="signinPassword">Password<span style={{ color: "rgb(209 2 2)" }}> * </span> </label>
+              <input name="password" onChange={formik.handleChange} value={formik.values.password} type={hide ? "text" : "password"} id='signinPassword' required="" />
               <i onClick={() => setHide(!hide)} className={hide ? "bi-eye-fill" : "bi-eye-slash-fill"}></i>
             </div>
             <div className='checkboxLabel'>
