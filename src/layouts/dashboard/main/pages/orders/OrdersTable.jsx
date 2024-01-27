@@ -28,7 +28,7 @@ export default function OrdersTable({ data, getOrders }) {
         setLoading(true);
         setInfoModal(!infoModal);
         setSelectedOrderId(record?._id);
-        getOrderData(record._id);
+        getOrderData(record);
     };
 
     const singleOrderData = orderData?.find((item) => selectedOrderId === item._id);
@@ -69,11 +69,10 @@ export default function OrdersTable({ data, getOrders }) {
 
     const handleChange = (value, record) => {
         API.put(`/dashboard/orders/${record._id}`, { status: value })
-            .then(
-                (res) => {
-                    console.log(res);
-                    getOrders();
-                }
+            .then((res) => {
+                console.log(res);
+                getOrders();
+            }
             );
     };
 
@@ -125,10 +124,10 @@ export default function OrdersTable({ data, getOrders }) {
             key: "status",
             render: (text) => (
                 <span className={`
-                ${text === "delivered" ? "deliveredClass" : ""}
-                ${text === "pending" ? "pendingClass" : ""}
-                ${text === "proccesing" ? "proccesingClass" : ""}
-                ${text === "cancel" ? "cancelClass" : ""}
+                ${text === "Delivered" ? "deliveredClass" : ""}
+                ${text === "Pending" ? "pendingClass" : ""}
+                ${text === "Processing" ? "processingClass" : ""}
+                ${text === "Cancelled" ? "cancelledClass" : ""}
                 `}>
                     {text}
                 </span>
@@ -143,20 +142,20 @@ export default function OrdersTable({ data, getOrders }) {
                 <Select defaultValue={record.status} style={{ width: 120 }} onChange={(value) => handleChange(value, record)}
                     options={[
                         {
-                            value: "delivered",
+                            value: "Delivered",
                             label: "Delivered",
                         },
                         {
-                            value: "pending",
+                            value: "Pending",
                             label: "Pending",
                         },
                         {
-                            value: "proccesing",
-                            label: "Proccesing",
+                            value: "Processing",
+                            label: "Processing",
                         },
                         {
-                            value: "cancel",
-                            label: "Cancel",
+                            value: "Cancelled",
+                            label: "Cancelled",
                         },
                     ]}
                 />
@@ -224,8 +223,7 @@ export default function OrdersTable({ data, getOrders }) {
                     </div>
                 )}
             </div>
-            <Table className="ordersTable" columns={columns} dataSource={data}
-                pagination={{ pageSize: 10, onChange: handlePaginationChange }} />
+            <Table columns={columns} dataSource={data} pagination={{ pageSize: 10, onChange: handlePaginationChange }} />
         </div>
     )
 }
