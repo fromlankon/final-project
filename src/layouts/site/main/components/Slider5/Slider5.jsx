@@ -16,7 +16,7 @@ export default function Slider5() {
             .then((res) => {
                 setBrands(res.data)
             })
-    }, [])
+    }, []);
 
     return (
         <div className='section5'>

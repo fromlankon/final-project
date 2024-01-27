@@ -32,6 +32,7 @@ export default function Cart() {
             backData.forEach((item) => {
                 deleteItem(item._id);
             });
+            scrollTo(0, 0);
         } else {
             setBasket([]);
         }
@@ -51,7 +52,7 @@ export default function Cart() {
                             <img src="https://nooni-be87.kxcdn.com/nooni-fashion/wp-content/themes/nooni/images/cart-empty.svg" />
                             <p className='cartText7'> Your cart is currently empty. </p>
                         </div>
-                        <div className='cartButton3'> RETURN TO SHOP </div>
+                        <Link to={"/shop"} className='cartButton3'> RETURN TO SHOP </Link>
                     </div>
                 )}
                 {(basket.length > 0 || backData.length > 0) && (
@@ -138,7 +139,7 @@ export default function Cart() {
                                 </div>
                                 <div className='cartFooterButtons'>
                                     <button className='cartFooterButton1' onClick={() => emptyCart()}> EMPTY CART </button>
-                                    <button className='cartFooterButton2' onClick={() => updateCart()}> UPDATE CART </button>
+                                    <button className='cartFooterButton2' onClick={() => { updateCart(); scrollTo(0, 0) }}> UPDATE CART </button>
                                 </div>
                             </div>
                         </div>

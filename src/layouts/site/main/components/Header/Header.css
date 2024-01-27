@@ -181,8 +181,7 @@
     color: rgb(49, 49, 49);
     font-size: 15px;
     display: flex;
-    align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .loginDropdownImage{

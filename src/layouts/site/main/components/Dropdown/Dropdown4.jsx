@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import "./Dropdown.css"
+import { UserContext } from '../../../../../context/AuthContext'
 
 export default function Dropdown4({ headerPadding, dropdownState, handleDropdownToggle }) {
+
+    const { user } = useContext(UserContext);
+
     return (
         <li className={`kidsDropdown headerLink ${headerPadding ? "padding" : ""}`} onMouseEnter={() => handleDropdownToggle('kids', true)} onMouseLeave={() => handleDropdownToggle('kids', false)}>
             <Link className='kids'>
@@ -28,6 +32,11 @@ export default function Dropdown4({ headerPadding, dropdownState, handleDropdown
                 <Link to={"/about"}>
                     <p className='dropdown4link'> About Us </p>
                 </Link>
+                {user === "superadmin" || "admin" ? (
+                    <Link to={"/admin/dashboard"}>
+                        <p className='dropdown4link'> Dashboard </p>
+                    </Link>
+                ) : null}
             </div>
         </li>
     )

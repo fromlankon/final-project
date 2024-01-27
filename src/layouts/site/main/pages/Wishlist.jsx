@@ -4,6 +4,7 @@ import { WishlistContext } from '../../../../context/WishlistContext'
 import { useState } from 'react'
 import "../CSS/Wishlist.css"
 import { BasketContext } from '../../../../context/BasketContext'
+import { getProducts } from '../../../../services/products'
 
 export default function Wishlist() {
 
@@ -14,10 +15,17 @@ export default function Wishlist() {
     const { wishlist, setWishlist } = useContext(WishlistContext)
     const { addToBasket, addToCartNotification } = useContext(BasketContext)
     const [deleteNotification, setDeleteNotification] = useState(false);
+    const [products, setProducts] = useState([])
+
+    useEffect(() => {
+        getProducts()
+            .then((res) => {
+                setProducts(res.data.product)
+            })
+    }, [])
 
     const deleteItem = (_id) => {
         setWishlist(wishlist.filter(item => item._id !== _id));
-
         setDeleteNotification(true);
 
         setTimeout(() => {
@@ -65,18 +73,11 @@ export default function Wishlist() {
                                 <p className='wishlistNewPrice'> ${prod.salePrice}.00 </p>
                             </div>
                             <div className='wishlistBodyData3'>
-                                {prod.stock !== 0 ? (
-                                    <>
-                                        <i className="bi bi-check2"></i>
-                                        <p> In stock </p>
-                                    </>
-                                ) :
-                                    (
-                                        <p style={{ color: "red" }}> Out of stock </p>
-                                    )}
+                                <i className="bi bi-check2"></i>
+                                <p> In stock </p>
                             </div>
                             <div className='wishlistBodyData4'>
-                                <button onClick={() => addToBasket(prod)}>
+                                <button className='wishlistAddButton' onClick={() => addToBasket(prod)}>
                                     ADD TO CART
                                 </button>
                                 <i className="fa-regular fa-trash-can" onClick={() => deleteItem(prod._id)}></i>
@@ -117,14 +118,8 @@ export default function Wishlist() {
                                         <div> <img src={prod.images[0].url} /> </div>
                                     </div>
                                     <div className='wishlistBodyData-5-left-2'>
-                                        {prod.stock !== 0 ? (
-                                            <>
-                                                <i className="bi bi-check2"></i>
-                                                <p> In Stock </p>
-                                            </>
-                                        ) : (
-                                            <p> Ouf of stock </p>
-                                        )}
+                                        <i className="bi bi-check2"></i>
+                                        <p> In Stock </p>
                                     </div>
                                 </div>
                                 <div className='wishlistBodyData-5-right'>
@@ -136,7 +131,7 @@ export default function Wishlist() {
                                 </div>
                             </div>
                             <div className='wishlistBodyData-6'>
-                                <button onClick={() => addToBasket(prod)}>
+                                <button className='wishlistAddButton' onClick={() => addToBasket(prod)}>
                                     ADD TO CART
                                 </button>
                                 <i className="fa-regular fa-trash-can" onClick={() => deleteItem(prod._id)}></i>

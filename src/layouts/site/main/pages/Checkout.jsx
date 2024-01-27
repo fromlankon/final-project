@@ -14,6 +14,10 @@ export default function Checkout() {
     const [countryAccordion, setCountryAccordion] = useState(false);
     const [selectedCountry, setSelectedCountry] = useState(null);
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     const handleCountryClick = (country) => {
         setSelectedCountry(country);
         setCountryAccordion(!countryAccordion);

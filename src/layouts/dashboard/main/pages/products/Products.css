@@ -336,6 +336,7 @@ table {
     height: 130px;
     overflow: hidden;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .productsUpdateModalGetImages div img {

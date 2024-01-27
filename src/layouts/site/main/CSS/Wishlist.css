@@ -163,8 +163,7 @@
     justify-content: space-between;
 }
 
-.wishlistBodyData4 button,
-.wishlistBodyData-6 button {
+.wishlistAddButton {
     min-width: 140px;
     width: 190px;
     height: 50px;
@@ -182,9 +181,13 @@
     gap: 4px;
 }
 
-.wishlistBodyData4 button:hover,
-.wishlistBodyData-6 button:hover {
+.wishlistAddButton:hover {
     background-color: rgb(209 2 2);
+}
+
+.wishlistAddButton.disabled:hover{
+    background-color: black;
+    color: white;
 }
 
 .wishlistBodyData4 i {
@@ -421,6 +424,7 @@
         align-items: center;
         gap: 20px;
         width: 100%;
+        padding-top: 50px;
     }
 
     .wishlistBodyData5 {

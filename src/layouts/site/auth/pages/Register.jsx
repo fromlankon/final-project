@@ -22,12 +22,13 @@ export default function Register() {
     onSubmit: values => {
       RegisterCall(values)
         .then(({ data }) => {
-          console.log(data)
-          localStorage.setItem("token", data.data.token)
-          navigate("/home")
+          console.log(data);
+          localStorage.setItem("token", data.data.token);
+          navigate("/home");
+          window.location.reload();
         })
         .catch((err) => {
-          console.log(err)
+          console.log(err);
         })
     },
   });
