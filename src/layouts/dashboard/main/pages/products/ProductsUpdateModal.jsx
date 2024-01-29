@@ -106,10 +106,8 @@ export default function ProductsUpdateModal({ openUpdateModal, productsUpdateMod
                     <label htmlFor="uploadButton" className='uploadButtonLabel'> <img src="../../../../../../src/images/Upload.png" /> Upload Image </label>
                 </div>
                 <div className='productsUpdateModalGetImages'>
-                    {products?.images?.map((img) => (
-                        <div>
-                            <img src={img?.url} />
-                        </div>
+                    {products.images && products.images.map((img) => (
+                        <img src={typeof img === "string" ? img : img.url} />
                     ))}
                 </div>
                 <button type='submit' className='productsButton'> UPDATE PRODUCT </button>

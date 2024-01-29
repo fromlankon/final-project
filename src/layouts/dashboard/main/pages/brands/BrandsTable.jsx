@@ -61,8 +61,15 @@ const BrandsTable = ({ data, getBrands }) => {
 
     const handleDelete = (record) => {
         confirm({
-            title: `Do you want to delete "${record.name}"?`,
-            content: "This action cannot be undone.",
+            title: `Do you want to delete "${record.name}" brand?`,
+            centered: true,
+            icon: null,
+            width: 500,
+            okText: "Delete",
+            className: "custom-confirm-footer",
+            okButtonProps: {
+                className: "delete-button"
+            },
             onOk() {
                 API.delete(`/dashboard/brands/${record._id}`)
                     .then(() => {

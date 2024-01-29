@@ -124,10 +124,10 @@ export default function OrdersTable({ data, getOrders }) {
             key: "status",
             render: (text) => (
                 <span className={`
-                ${text === "Delivered" ? "deliveredClass" : ""}
-                ${text === "Pending" ? "pendingClass" : ""}
-                ${text === "Processing" ? "processingClass" : ""}
-                ${text === "Cancelled" ? "cancelledClass" : ""}
+                ${text === "delivered" ? "deliveredClass" : ""}
+                ${text === "pending" ? "pendingClass" : ""}
+                ${text === "processing" ? "processingClass" : ""}
+                ${text === "cancel" ? "cancelClass" : ""}
                 `}>
                     {text}
                 </span>
@@ -142,20 +142,20 @@ export default function OrdersTable({ data, getOrders }) {
                 <Select defaultValue={record.status} style={{ width: 120 }} onChange={(value) => handleChange(value, record)}
                     options={[
                         {
-                            value: "Delivered",
+                            value: "delivered",
                             label: "Delivered",
                         },
                         {
-                            value: "Pending",
+                            value: "pending",
                             label: "Pending",
                         },
                         {
-                            value: "Processing",
+                            value: "processing",
                             label: "Processing",
                         },
                         {
-                            value: "Cancelled",
-                            label: "Cancelled",
+                            value: "cancel",
+                            label: "Cancel",
                         },
                     ]}
                 />

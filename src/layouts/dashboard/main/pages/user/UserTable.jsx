@@ -40,7 +40,12 @@ export default function UserTable({ data, getUser }) {
             key: 'actions',
             render: (text, record) => (
                 <Space>
-                    <Button type="danger" icon={<DeleteOutlined />} style={{ background: "#EF2525", color: "white" }} onClick={() => handleDelete(record)} ></Button>
+                    <Button
+                        type="danger"
+                        icon={<DeleteOutlined />}
+                        style={{ background: "#EF2525", color: "white" }}
+                        onClick={() => handleDelete(record)} >
+                    </Button>
                 </Space>
             ),
         },
@@ -51,7 +56,15 @@ export default function UserTable({ data, getUser }) {
     const handleDelete = (record) => {
         confirm({
             title: `Do you want to delete ${record.role} "${record.name} ${record.surname}"?`,
-            content: "This action cannot be undone.",
+            centered: true,
+            icon: null,
+            width: 500,
+            okText: "Delete",
+            className: "custom-confirm-footer",
+            okButtonProps: {
+                className: "delete-button"
+            },
+            width: 500,
             onOk() {
                 API.delete(`/dashboard/users/${record._id}`)
                     .then(() => {

@@ -213,7 +213,14 @@ const ProductsTable = ({ getProducts, data }) => {
   const handleDelete = (record) => {
     confirm({
       title: `Do you want to delete "${record.title}"?`,
-      content: "This action cannot be undone.",
+      centered: true,
+      icon: null,
+      width: 500,
+      okText: "Delete",
+      className: "custom-confirm-footer",
+      okButtonProps: {
+        className: "delete-button"
+      },
       onOk() {
         API.delete(`/dashboard/products/${record._id}`)
           .then(() => {
