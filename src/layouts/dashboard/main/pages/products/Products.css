@@ -7,10 +7,49 @@
 
 .productsOptions {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     background-color: white;
     padding: 20px 10px;
     border-radius: 7px;
+}
+
+.productsOptions form{
+    position: relative;
+}
+
+.productsOptions form input{
+    height: 50px;
+    width: 360px;
+    outline: none;
+    border: 1px solid rgb(220, 220, 220);
+    padding-left: 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    font-family: Poppins-Regular;
+    letter-spacing: .3px;
+    transition: 200ms;
+    color: rgb(0 0 0 / 88%);
+}
+
+.productsOptions form input:hover{
+    border: 1px solid #10B981;
+}
+
+.productsOptions form input:focus{
+    border: 1px solid #10B981;
+}
+
+.productsOptions form button{
+    height: 50px;
+    width: 50px;
+    border: none;
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    background-color: #10B981;
 }
 
 .productsModalOverlay {
@@ -54,6 +93,15 @@
     border-radius: 5px;
     font-family: Poppins-Regular;
     letter-spacing: .3px;
+    transition: 200ms;
+}
+
+.productsTitleInput:hover{
+    border: 1px solid #8a8a8a;
+}
+
+.productsTitleInput:focus{
+    border: 1px solid #8a8a8a;
 }
 
 .productsTitleInput::placeholder {
@@ -78,10 +126,19 @@
     border-radius: 5px;
     font-family: Poppins-Regular;
     letter-spacing: .3px;
+    transition: 200ms;
 }
 
 .productsInput::placeholder {
     color: black;
+}
+
+.productsInput:hover{
+    border: 1px solid #8a8a8a;
+}
+
+.productsInput:focus{
+    border: 1px solid #8a8a8a;
 }
 
 .productsModalBrandsSelect {
@@ -156,6 +213,15 @@
     resize: none;
     font-family: Poppins-Regular;
     letter-spacing: .3px;
+    transition: 200ms;
+}
+
+.descriptionInput:hover{
+    border: 1px solid #8a8a8a;
+}
+
+.descriptionInput:focus{
+    border: 1px solid #8a8a8a;
 }
 
 .descriptionInput::placeholder{
@@ -174,7 +240,7 @@
 }
 
 .productsUpdateModalImage:hover, .productsAddModalImage:hover{
-    background-color: rgb(220, 220, 220);
+    border: 1px solid #8a8a8a;
 }
 
 #uploadButton[type="file"]{
@@ -335,11 +401,6 @@ table {
     width: 100%;
     height: 130px;
     border-radius: 5px;
-}
-
-.custom-confirm-footer {
-    
-    justify-content: flex-end;
 }
 
 .ant-modal-confirm-body-wrapper{

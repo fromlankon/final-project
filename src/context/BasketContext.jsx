@@ -83,19 +83,6 @@ export const BasketProvider = ({ children }) => {
         }
     };
 
-    // if (user && basket.length > 0) {
-    //     const formattedBasket = basket.map((item) => ({
-    //         productId: item._id,
-    //         productCount: item.productCount,
-    //     }));
-    //     console.log(formattedBasket);
-    //     API.post("/site/basket", { basket: formattedBasket })
-    //         .then((res) => {
-    //             console.log(res);
-    //             setBasket([]);
-    //         });
-    // };
-
     const deleteItem = async (_id) => {
         if (user) {
             const res = await API.delete(`site/basket/${_id}`);

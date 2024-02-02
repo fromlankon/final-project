@@ -53,6 +53,15 @@
     border-radius: 5px;
     font-family: Poppins-Regular;
     letter-spacing: .3px;
+    transition: 200ms;
+}
+
+.brandsTitleInput:hover{
+    border: 1px solid #8a8a8a;
+}
+
+.brandsTitleInput:focus{
+    border: 1px solid #8a8a8a;
 }
 
 .upload-list-inline .ant-btn{

@@ -1,15 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Button, Input, Space, Table, Modal, Switch } from 'antd';
-import { EditOutlined, DeleteOutlined, SearchOutlined } from '@ant-design/icons';
+import React, { useEffect, useState } from 'react';
+import { Button, Space, Table, Modal, Switch } from 'antd';
+import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { API } from '../../../../../config/axios';
 import ProductsUpdateModal from './ProductsUpdateModal';
 import { getBrands } from '../../../../../services/products';
 
 const ProductsTable = ({ getProducts, data }) => {
+  
   const [selectedProduct, setSelectedProduct] = useState({});
-  const [searchText, setSearchText] = useState('');
-  const [searchedColumn, setSearchedColumn] = useState('');
-  const searchInput = useRef(null);
   const [brands, setBrands] = useState([]);
   const [productsUpdateModal, setProductsUpdateModal] = useState(false);
 
@@ -27,72 +25,18 @@ const ProductsTable = ({ getProducts, data }) => {
       .catch((err) => console.error(err));
   }, []);
 
-  const handleSearch = (selectedKeys, confirm, dataIndex) => {
-    confirm();
-    setSearchText(selectedKeys[0]);
-    setSearchedColumn(dataIndex);
-  };
-
-  const handleReset = (clearFilters) => {
-    clearFilters();
-    setSearchText('');
-  };
-
-  const getColumnSearchProps = (dataIndex) => ({
-    filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters, close }) => (
-      <div style={{ padding: 8 }} onKeyDown={(e) => e.stopPropagation()}>
-        <Input
-          ref={searchInput}
-          placeholder={`Search ${dataIndex}`}
-          value={selectedKeys[0]}
-          onChange={(e) => setSelectedKeys(e.target.value ? [e.target.value] : [])}
-          onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
-          style={{ marginBottom: 8, display: 'block' }}
-        />
-
-        <Space>
-          <Button
-            type="primary"
-            onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
-            icon={<SearchOutlined />}
-            size="small"
-            style={{ width: 90 }}
-          >
-            Search
-          </Button>
-
-          <Button
-            onClick={() => clearFilters && handleReset(clearFilters)}
-            size="small"
-            style={{ width: 90 }}
-          >
-            Reset
-          </Button>
-        </Space>
-      </div>
-    ),
-    filterIcon: (filtered) => <SearchOutlined style={{ color: filtered ? '#1677ff' : undefined }} />,
-    onFilter: (value, record) => record[dataIndex].toString().toLowerCase().includes(value.toLowerCase()),
-    onFilterDropdownOpenChange: (visible) => {
-      if (visible) {
-        setTimeout(() => searchInput.current?.select(), 100);
-      }
-    },
-  });
-
   const columns = [
     {
       title: "IMAGE",
       dataIndex: "images",
       key: "images",
-      render: (images) => (images && images[0]?.url ? <img src={images[0].url} style={{ width: "80px", height: "100px" }} alt="Product" /> : null),
+      render: (images) => (images && images[0]?.url ? <img src={images[0].url} style={{ width: "80px", height: "100px" }} /> : null),
       width: "7%",
     },
     {
       title: "PRODUCT NAME",
       dataIndex: "title",
       key: "title",
-      ...getColumnSearchProps("title"),
       render: (text) => <a> {text} </a>,
       width: "20%",
     },
@@ -217,7 +161,6 @@ const ProductsTable = ({ getProducts, data }) => {
       icon: null,
       width: 500,
       okText: "Delete",
-      className: "custom-confirm-footer",
       okButtonProps: {
         className: "delete-button"
       },
@@ -243,7 +186,9 @@ const ProductsTable = ({ getProducts, data }) => {
         openUpdateModal={openUpdateModal}
         productsUpdateModal={productsUpdateModal}
       />
-      <Table columns={columns} dataSource={Array.isArray(data) ? data.map((item, _id) => ({ ...item, key: _id })) : []}
+      <Table
+        columns={columns}
+        dataSource={Array.isArray(data) ? data.map((item, _id) => ({ ...item, key: _id })) : []}
         pagination={{ pageSize: 15, onChange: handlePaginationChange }} />
     </>
   );

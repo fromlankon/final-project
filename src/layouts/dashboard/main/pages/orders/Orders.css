@@ -65,7 +65,7 @@
 }
 
 .ordersResetButton:hover{
-    background-color: rgb(234, 234, 234);
+    border: 1px solid #007aff;
 }
 
 .ordersCustomerNameFilter{

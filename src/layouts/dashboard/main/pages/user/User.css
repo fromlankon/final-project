@@ -54,6 +54,15 @@
     font-family: Poppins-Regular;
     letter-spacing: .3px;
     font-size: 14px;
+    transition: 200ms;
+}
+
+.userTitleInput:hover{
+    border: 1px solid #8a8a8a;
+}
+
+.userTitleInput:focus{
+    border: 1px solid #8a8a8a;
 }
 
 .userNameInputs{

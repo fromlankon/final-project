@@ -59,10 +59,10 @@ export default function Orders() {
           <Select className="ordersStatusFilter" defaultValue="Order status"
             onChange={handleChange}
             options={[
-              { value: 'Delivered', label: 'Delivered' },
-              { value: 'Pending', label: 'Pending' },
-              { value: 'Processing', label: 'Processing' },
-              { value: 'Cancelled', label: 'Cancelled' }
+              { value: 'delivered', label: 'Delivered' },
+              { value: 'pending', label: 'Pending' },
+              { value: 'processing', label: 'Processing' },
+              { value: 'cancel', label: 'Cancel' }
             ]} />
           <Select className="ordersStatusFilter" defaultValue="Payment method"
             options={[{ value: 'card', label: 'Card' }]} />

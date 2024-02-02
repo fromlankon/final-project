@@ -7,9 +7,9 @@ import Loading from '../components/Loading/Loading';
 import { BasketContext } from '../../../../context/BasketContext';
 import { WishlistContext } from '../../../../context/WishlistContext';
 import { sidebarContext } from '../../../../context/SidebarContext';
-import { UserContext } from '../../../../context/AuthContext';
 
 function Lightbox({ lightboxImages, onClose, activeImageIndex }) {
+    
     const [lightboxIndex, setLightboxIndex] = useState(activeImageIndex);
 
     const handlePrevClick = () => {

@@ -32,11 +32,6 @@ export default function Dropdown4({ headerPadding, dropdownState, handleDropdown
                 <Link to={"/about"}>
                     <p className='dropdown4link'> About Us </p>
                 </Link>
-                {user === "superadmin" || user === "admin" ? (
-                    <Link to={"/admin/dashboard"}>
-                        <p className='dropdown4link'> Dashboard </p>
-                    </Link>
-                ) : null}
             </div>
         </li>
     )

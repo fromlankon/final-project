@@ -60,7 +60,6 @@ export default function UserTable({ data, getUser }) {
             icon: null,
             width: 500,
             okText: "Delete",
-            className: "custom-confirm-footer",
             okButtonProps: {
                 className: "delete-button"
             },
