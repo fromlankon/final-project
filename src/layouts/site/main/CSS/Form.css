@@ -6,7 +6,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 10px;
 }
 
 .registerForm {
@@ -24,13 +23,19 @@
 .signinMain {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;   
     width: 100%;
+}
+
+.siteInvalidLogin{
+    color: rgb(209 2 2);
+    font-size: 13px;
+    font-family: Inter-Regular;
 }
 
 .registerForm input {
     width: 420px;
-    height: 42px;
+    height: 50px;
     background-color: rgb(249 250 251);
     border: 1px solid rgb(209 213 219);
     padding-left: 12px;
@@ -41,7 +46,7 @@
 }
 
 .registerForm button {
-    height: 42px;
+    height: 50px;
     color: white;
     background-color: #000000;
     font-family: Inter-Regular;
@@ -52,10 +57,19 @@
     font-size: 17px;
     transition: 200ms;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    position: relative;
 }
 
 .registerForm button:hover{
     background-color: rgb(209 2 2);
+}
+
+.registerForm button img{
+    width: 80px;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #signinCheckbox {
@@ -75,24 +89,19 @@
     border: 2px solid #000000;
 }
 
-.terms,
-.signupLink {
+.terms, .signupLink {
     color: rgb(209 2 2);
 }
 
-.label {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    color: rgb(17 24 39);
+.signInPassword {
     position: relative;
-    font-size: 15px;
 }
 
-.label i {
+.signInPassword i {
     position: absolute;
     right: 15px;
-    top: 53%;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 20px;
     cursor: pointer;
     color: rgb(77, 77, 77);
@@ -119,15 +128,21 @@ label {
     color: rgb(17 24 39);
 }
 
+.usedEmail{
+    font-family: Inter-Regular;
+    color: rgb(209 2 2);
+    font-size: 13px;
+}
+
 @media only screen and (max-width: 580px) {
     .registerForm input {
-        height: 40px;
         width: 100%;
+        height: 40px;
     }
 
     .registerForm button {
-        height: 40px;
         font-size: 14px;
+        height: 40px;
     }
 
     .label {
@@ -157,6 +172,10 @@ label {
     .registerForm {
         width: 100%;
         padding: 0 20px;
+    }
+
+    .registerForm button img{
+        top: -20px;
     }
 }
 

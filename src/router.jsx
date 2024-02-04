@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import MainLayout from "./layouts/site/main/MainLayout";
 import Home from "./layouts/site/main/pages/Home";
 import AuthLayout from "./layouts/site/auth/AuthLayout";
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home />,
+                element: <Navigate to="/home" />,
             },
             {
                 path: "home",

@@ -1,7 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
 import "./Slider3.css";
 import { Link } from 'react-router-dom';
 import DetailsModal from '../DetailsModal/DetailsModal';
@@ -104,8 +102,8 @@ export default function Slider3() {
                                         <i className="bx bx-heart" onClick={() => setWishlistIcon(!wishlistIcon)}></i>
                                     )}
                                 </div>
-                                <button disabled={data.stock <= 0} style={data.stock <= 0 ? { cursor: "no-drop" } :
-                                    {}} className={`slider3-cart-add-to-cart ${data.stock <= 0 ? "disabled" : ""}`}
+                                <button disabled={data.stock === 0} style={data.stock === 0 ? { cursor: "no-drop" } : {}}
+                                    className={`slider3-cart-add-to-cart ${data.stock === 0 ? "disabled" : ""}`}
                                     onClick={() => addToBasketAndOpenSidebar(data)} > ADD TO CART
                                 </button>
                                 <div className="slider3-cart-options">
@@ -133,7 +131,7 @@ export default function Slider3() {
                                     </div>
                                 </div>
                                 <div className='badges'>
-                                    <div className={`soldoutBadge ${data.stock !== 0 ? "close" : ""}`}> SOLD OUT </div>
+                                    <div className={`soldoutBadge ${data.stock > 0 ? "close" : ""}`}> SOLD OUT </div>
                                 </div>
                                 <Link to={`${data._id}/${getBrandName(data.brandId)}`}> <img className='slide3image1' src={data.images[0].url} /> </Link>
                                 <img className='slide3image2' src={data.images[1].url} />

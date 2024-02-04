@@ -27,12 +27,7 @@
     border-radius: 5px;
     font-family: Poppins-Regular;
     letter-spacing: .3px;
-    transition: 200ms;
     color: rgb(0 0 0 / 88%);
-}
-
-.productsOptions form input:hover{
-    border: 1px solid #10B981;
 }
 
 .productsOptions form input:focus{
@@ -50,6 +45,11 @@
     cursor: pointer;
     border-radius: 0 5px 5px 0;
     background-color: #10B981;
+    transition: 150ms;
+}
+
+.productsOptions form button:hover{
+    background-color: #039068;
 }
 
 .productsModalOverlay {

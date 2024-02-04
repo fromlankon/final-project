@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import "../../main/CSS/Form.css"
 import { Link, useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik';
@@ -13,6 +13,8 @@ export default function Login() {
   const { basket, setBasket } = useContext(BasketContext);
   const navigate = useNavigate();
   const [hide, setHide] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [loginError, setLoginError] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -24,6 +26,7 @@ export default function Login() {
       password: "",
     },
     onSubmit: values => {
+      setIsLoading(true);
       LoginCall(values)
         .then(({ data }) => {
           console.log(data);
@@ -61,7 +64,9 @@ export default function Login() {
           }
         })
         .catch((err) => {
+          setIsLoading(false);
           console.log(err);
+          setLoginError(err);
         });
     }
   });
@@ -72,16 +77,15 @@ export default function Login() {
         <form className='registerForm' onSubmit={formik.handleSubmit}>
           <p className='signup'> Login </p>
           <div className='signinMain'>
-            <div className='label'>
-              <label htmlFor="signinMail"> Email <span style={{ color: "rgb(209 2 2)" }}> * </span> </label>
-              <input name="email" onChange={formik.handleChange} value={formik.values.email} type="mail" id='signinMail' required="" />
-            </div>
-            <div className='label'>
-              <label htmlFor="signinPassword"> Password <span style={{ color: "rgb(209 2 2)" }}> * </span> </label>
-              <input name="password" onChange={formik.handleChange} value={formik.values.password} type={hide ? "text" : "password"} id='signinPassword' required="" />
+            <input name="email" onChange={formik.handleChange} value={formik.values.email} type="mail" placeholder='Email' required />
+            <div className='signInPassword'>
+              <input name="password" onChange={formik.handleChange} value={formik.values.password} type={hide ? "text" : "password"} placeholder='Password' required />
               <i onClick={() => setHide(!hide)} className={hide ? "bi-eye-fill" : "bi-eye-slash-fill"}></i>
             </div>
-            <button type='Submit'> Sign In </button>
+            {loginError && <span className='siteInvalidLogin'> <i className="fa-solid fa-circle-exclamation"></i> Incorrect email adress or password </span>}
+            <button type='submit'> {isLoading ?
+              <img src="https://cdn.buymeacoffee.com/assets/img/widget/loader.svg?fbclid=IwAR3ma1xzQ6ZcO_k12qK6KnHmhKda-NYu8SHsWt23qzAA58a7-yRWNczgVsU" /> : "Sign In"}
+            </button>
             <p className='dontHave'> Don't have an account? <Link to={"/register"} className='signupLink'> Sign up </Link> </p>
           </div>
         </form>

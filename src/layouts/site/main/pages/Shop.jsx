@@ -277,8 +277,8 @@ export default function Shop() {
                                                         <i className="bx bx-heart" onClick={() => setWishlistIcon(!wishlistIcon)}></i>
                                                     )}
                                                 </div>
-                                                <button disabled={data.stock <= 0} style={data.stock <= 0 ? { cursor: "no-drop" } :
-                                                    {}} className={`shopCardAddToCart ${data.stock <= 0 ? "disabled" : ""}`}
+                                                <button disabled={data.stock === 0} style={data.stock === 0 ? { cursor: "no-drop" } : {}}
+                                                    className={`shopCardAddToCart ${data.stock === 0 ? "disabled" : ""}`}
                                                     onClick={() => addToBasketAndOpenSidebar(data)} > ADD TO CART
                                                 </button>
                                                 <div className="shopCardOptions">
@@ -306,7 +306,7 @@ export default function Shop() {
                                                     </div>
                                                 </div>
                                                 <div className='badges'>
-                                                    <div className={`soldoutBadge ${data.stock !== 0 ? "close" : ""}`}> SOLD OUT </div>
+                                                    <div className={`soldoutBadge ${data.stock > 0 ? "close" : ""}`}> SOLD OUT </div>
                                                 </div>
                                                 <Link to={`/home/${data._id}/${getBrandName(data.brandId)}`}> <img className='shopCardImage1' src={data.images[0].url} /> </Link>
                                                 <img className='shopCardImage2' src={data.images[1].url} />
